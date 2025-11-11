@@ -1,0 +1,6 @@
+../Core/Src/lsm9ds1_read_imu.c:35:6:lsm9ds1_read_imu_polling	5
+../Core/Src/lsm9ds1_read_imu.c:104:16:platform_write_imu	1
+../Core/Src/lsm9ds1_read_imu.c:112:16:platform_read_imu	1
+../Core/Src/lsm9ds1_read_imu.c:120:13:tx_com	1
+../Core/Src/lsm9ds1_read_imu.c:125:13:platform_delay	1
+../Core/Src/lsm9ds1_read_imu.c:130:13:platform_init	1

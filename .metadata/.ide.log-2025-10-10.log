@@ -1,0 +1,138 @@
+2025-10-11 01:17:00,845 [INFO] WebApp:194 - Connection lost
+2025-10-11 01:17:02,168 [INFO] WebApp:191 - Connection restablished
+2025-10-11 01:22:23,566 [INFO] WebApp:194 - Connection lost
+2025-10-11 01:22:23,788 [INFO] WebApp:191 - Connection restablished
+2025-10-11 01:52:32,168 [INFO] WebApp:194 - Connection lost
+2025-10-11 01:52:33,501 [INFO] WebApp:191 - Connection restablished
+2025-10-11 01:54:37,622 [INFO] WebApp:194 - Connection lost
+2025-10-11 01:54:56,325 [INFO] WebApp:191 - Connection restablished
+2025-10-11 01:54:57,388 [INFO] WebApp:194 - Connection lost
+2025-10-11 01:54:57,595 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:18:52,149 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:18:53,599 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:21:26,775 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:21:36,235 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:21:38,619 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:21:38,967 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:22:13,853 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:22:17,140 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:22:20,137 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:22:20,407 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:23:25,100 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:23:25,387 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:31:51,803 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:32:04,712 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:32:22,453 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:32:24,660 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:32:27,313 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:32:27,834 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:33:03,727 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:33:24,593 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:33:25,019 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:33:26,420 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:34:18,348 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:34:37,875 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:34:47,697 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:34:49,263 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:52:42,949 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:52:45,440 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:52:47,188 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:52:47,419 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:52:49,393 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:52:49,568 [INFO] WebApp:191 - Connection restablished
+2025-10-11 02:54:33,631 [INFO] WebApp:194 - Connection lost
+2025-10-11 02:54:33,862 [INFO] WebApp:191 - Connection restablished
+2025-10-11 03:18:41,480 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-10-11 03:18:47,195 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 758504120 Bytes (1073741824)
+2025-10-11 03:18:47,967 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 786774480 Bytes (1073741824)
+2025-10-11 03:18:51,980 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 478644928 Bytes (1073741824)
+2025-10-11 03:18:53,141 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-10-11 03:18:53,141 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-10-11 03:18:53,142 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: LPUART
+2025-10-11 03:18:53,142 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-10-11 03:18:53,142 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-10-11 03:18:53,147 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-10-11 03:18:53,156 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-10-11 03:18:53,961 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\license.tmp_save
+2025-10-11 03:18:55,807 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\license.tmp
+2025-10-11 03:18:56,013 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\gpio.c_save
+2025-10-11 03:18:56,898 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\gpio.c
+2025-10-11 03:18:56,945 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\gpio.h_save
+2025-10-11 03:18:57,453 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\gpio.h
+2025-10-11 03:18:58,373 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\usart.c_save
+2025-10-11 03:18:59,847 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\usart.c
+2025-10-11 03:18:59,894 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\usart.h_save
+2025-10-11 03:19:00,643 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\usart.h
+2025-10-11 03:19:00,746 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_it.c_save
+2025-10-11 03:19:02,064 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_it.c
+2025-10-11 03:19:02,107 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_it.h_save
+2025-10-11 03:19:02,482 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_it.h
+2025-10-11 03:19:02,575 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_hal_msp.c_save
+2025-10-11 03:19:03,251 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_hal_msp.c
+2025-10-11 03:19:03,297 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\system.tmp_save
+2025-10-11 03:19:03,758 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\system.tmp
+2025-10-11 03:19:03,854 [INFO] CodeEngine:321 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_hal_conf.h_save
+2025-10-11 03:19:04,349 [INFO] CodeEngine:345 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_hal_conf.h
+2025-10-11 03:19:04,489 [WARN] IPConfigManager:3238 - Warning: the RefConfig RCC_CommonPeriphClockConfig is not available in your config.xml file
+2025-10-11 03:19:04,570 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\main.h_save
+2025-10-11 03:19:05,189 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\main.h
+2025-10-11 03:19:05,224 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\main.c_save
+2025-10-11 03:19:05,710 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\main.c
+2025-10-11 03:19:07,967 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 1413mS.
+2025-10-11 03:19:08,010 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-10-11 03:19:08,514 [INFO] ConfigFileManager:1595 - The Die is : DIE469
+2025-10-11 03:19:12,511 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 4502mS.
+2025-10-11 03:19:12,516 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 3mS.
+2025-10-11 03:19:12,538 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-10-11 03:20:03,548 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-10-11 15:09:27,361 [INFO] WebApp:194 - Connection lost
+2025-10-11 15:09:27,836 [INFO] WebApp:191 - Connection restablished
+2025-10-11 15:09:29,462 [INFO] WebApp:194 - Connection lost
+2025-10-11 15:09:29,893 [INFO] WebApp:191 - Connection restablished
+2025-10-11 15:11:14,594 [INFO] WebApp:194 - Connection lost
+2025-10-11 15:11:14,832 [INFO] WebApp:191 - Connection restablished
+2025-10-11 15:54:56,769 [INFO] WebApp:194 - Connection lost
+2025-10-11 15:55:00,123 [INFO] WebApp:191 - Connection restablished
+2025-10-11 15:55:01,844 [INFO] WebApp:194 - Connection lost
+2025-10-11 15:55:02,102 [INFO] WebApp:191 - Connection restablished
+2025-10-11 16:06:53,366 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 593231168 Bytes (1073741824)
+2025-10-11 16:06:53,614 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 618923328 Bytes (1073741824)
+2025-10-11 16:06:54,734 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 729546048 Bytes (1073741824)
+2025-10-11 16:06:55,232 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-10-11 16:06:55,233 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-10-11 16:06:55,233 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: LPUART
+2025-10-11 16:06:55,233 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-10-11 16:06:55,233 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-10-11 16:06:55,234 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-10-11 16:06:55,237 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-10-11 16:06:55,442 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\license.tmp_save
+2025-10-11 16:06:55,722 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\license.tmp
+2025-10-11 16:06:55,807 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\gpio.c_save
+2025-10-11 16:06:56,023 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\gpio.c
+2025-10-11 16:06:56,033 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\gpio.h_save
+2025-10-11 16:06:56,106 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\gpio.h
+2025-10-11 16:06:56,251 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\usart.c_save
+2025-10-11 16:06:56,542 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\usart.c
+2025-10-11 16:06:56,555 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\usart.h_save
+2025-10-11 16:06:56,691 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\usart.h
+2025-10-11 16:06:56,721 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_it.c_save
+2025-10-11 16:06:57,029 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_it.c
+2025-10-11 16:06:57,040 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_it.h_save
+2025-10-11 16:06:57,122 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_it.h
+2025-10-11 16:06:57,155 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_hal_msp.c_save
+2025-10-11 16:06:57,509 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_hal_msp.c
+2025-10-11 16:06:57,527 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\system.tmp_save
+2025-10-11 16:06:57,651 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\system.tmp
+2025-10-11 16:06:57,675 [INFO] CodeEngine:321 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_hal_conf.h_save
+2025-10-11 16:06:57,938 [INFO] CodeEngine:345 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_hal_conf.h
+2025-10-11 16:06:58,010 [WARN] IPConfigManager:3238 - Warning: the RefConfig RCC_CommonPeriphClockConfig is not available in your config.xml file
+2025-10-11 16:06:58,049 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\main.h_save
+2025-10-11 16:06:58,431 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\main.h
+2025-10-11 16:06:58,451 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\main.c_save
+2025-10-11 16:06:59,716 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\main.c
+2025-10-11 16:07:00,415 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 369mS.
+2025-10-11 16:07:00,421 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-10-11 16:07:00,559 [INFO] ConfigFileManager:1595 - The Die is : DIE469
+2025-10-11 16:07:01,670 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 1249mS.
+2025-10-11 16:07:01,671 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 1mS.
+2025-10-11 16:07:01,676 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.

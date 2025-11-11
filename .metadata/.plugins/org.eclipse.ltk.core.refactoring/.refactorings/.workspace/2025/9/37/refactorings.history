@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;AutomotiveLogger/Core/Src/lsm9ds1_self_test.c&apos;" deleteContents="false" description="Delete resource &apos;AutomotiveLogger/Core/Src/lsm9ds1_self_test.c&apos;" element1="/AutomotiveLogger/Core/Src/lsm9ds1_self_test.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1757789410403"/>
+</session>

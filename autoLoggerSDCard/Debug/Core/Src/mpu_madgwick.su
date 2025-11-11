@@ -1,0 +1,4 @@
+../Core/Src/mpu_madgwick.c:38:6:MadgwickAHRSupdateIMU	152	static
+../Core/Src/mpu_madgwick.c:120:6:QuaternionToEulerDegrees	48	static
+../Core/Src/mpu_madgwick.c:144:6:CalibrateGyro	32	static
+../Core/Src/mpu_madgwick.c:163:6:IMU_Update	56	static

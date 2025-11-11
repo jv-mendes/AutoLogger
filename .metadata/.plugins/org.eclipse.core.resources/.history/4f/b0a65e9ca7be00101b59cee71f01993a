@@ -1,0 +1,68 @@
+#include "appSDCyclicWrite.h"
+#include "sd_functions.h"
+#include "sd_benchmark.h"
+
+void SDCyclic_Init(SDCyclic_t *sd, const char *filename)
+{
+    sd->head = 0;
+    sd->tail = 0;
+    sd->mounted = 0;
+
+    if (f_mount(&SDFatFS, SDPath, 1) == FR_OK) {
+        if (f_open(&sd->file, filename, FA_WRITE | FA_OPEN_APPEND) == FR_OK) {
+            sd->mounted = 1;
+            printf("[SD] Log file '%s' opened.\r\n", filename);
+        } else {
+            printf("[SD] Error opening file.\r\n");
+        }
+    } else {
+        printf("[SD] Mount failed.\r\n");
+    }
+}
+
+void SDCyclic_AddLine(SDCyclic_t *sd, const char *line)
+{
+    if (!sd->mounted) return;
+
+    uint16_t len = strlen(line);
+    for (uint16_t i = 0; i < len; i++) {
+        sd->buffer[sd->head] = line[i];
+        sd->head = (sd->head + 1) % SDCYCLIC_BUFFER_SIZE;
+
+        // sobrescreve se cheio
+        if (sd->head == sd->tail)
+            sd->tail = (sd->tail + 1) % SDCYCLIC_BUFFER_SIZE;
+    }
+}
+
+void SDCyclic_Flush(SDCyclic_t *sd)
+{
+    if (!sd->mounted || sd->head == sd->tail) return;
+
+    char temp[SDCYCLIC_TEMP_SIZE];
+    UINT bw;
+
+    while (sd->tail != sd->head) {
+        uint16_t count = 0;
+
+        while (sd->tail != sd->head && count < sizeof(temp)) {
+            temp[count++] = sd->buffer[sd->tail];
+            sd->tail = (sd->tail + 1) % SDCYCLIC_BUFFER_SIZE;
+        }
+
+        f_write(&sd->file, temp, count, &bw);
+    }
+
+    f_sync(&sd->file);
+}
+
+void SDCyclic_Deinit(SDCyclic_t *sd)
+{
+    if (!sd->mounted) return;
+
+    SDCyclic_Flush(sd);
+    f_close(&sd->file);
+    f_mount(NULL, "", 0);
+    sd->mounted = 0;
+    printf("[SD] Unmounted.\r\n");
+}

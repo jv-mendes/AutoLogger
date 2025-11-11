@@ -1,0 +1,10 @@
+23:40:37 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
+make -j16 all 
+arm-none-eabi-size  autoLoggerSDCard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  69968	    472	  14832	  85272	  14d18	autoLoggerSDCard.elf
+Finished building: default.size.stdout
+ 
+
+23:40:37 Build Finished. 0 errors, 0 warnings. (took 506ms)
+

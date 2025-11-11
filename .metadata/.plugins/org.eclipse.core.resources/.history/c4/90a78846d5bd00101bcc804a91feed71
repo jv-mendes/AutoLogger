@@ -1,0 +1,95 @@
+/*
+ * elm327.c
+ *
+ *  Created on: Nov 9, 2025
+ *      Author: jvmen
+ */
+
+#include "elm327.h"
+#define UART_RX_BUFFER_SIZE 1024  // tamanho do buffer (ajuste conforme necessário)
+
+extern uint8_t uart_rx_byte;                     // último byte recebido
+extern uint8_t uart_rx_buffer[UART_RX_BUFFER_SIZE]; // buffer para armazenar todos os dados
+volatile uint16_t uart_rx_index = 0;      // posição atual de escrita
+volatile uint8_t uart_data_ready = 0;     // flag de "dados prontos"
+volatile uint8_t uart_response_count = 0;  // conta quantas respostas chegaram
+volatile uint8_t uart_obd_byte_count = 0;
+// inicia ELM327
+void ELM327InitDebug(UART_HandleTypeDef *huart)
+{
+    //const char *init_cmds[] = {"ATZ\r", "ATE0\r", "ATL0\r", "ATS0\r", "ATSP0\r"};
+    const char *init_cmds[] = {"ATZ\r"};
+    for (uint8_t i = 0; i < sizeof(init_cmds)/sizeof(init_cmds[0]); i++)
+    {
+    	ELM327SendCmd(huart, init_cmds[i]);
+    	HAL_Delay(500);
+    }
+    HAL_UART_Transmit(&hlpuart1, (uint8_t*)"ELM327 inicializado com sucesso!\r\n", 35, HAL_MAX_DELAY);
+    HAL_UART_Receive_IT(huart, uart_rx_byte , 1);
+}
+
+/* Conversão hexadecimal -> byte */
+uint8_t hexToByte(const char *hex)
+{
+    uint8_t val = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        char c = hex[i];
+        val <<= 4;
+        if (c >= '0' && c <= '9') val |= c - '0';
+        else if (c >= 'A' && c <= 'F') val |= c - 'A' + 10;
+        else if (c >= 'a' && c <= 'f') val |= c - 'a' + 10;
+    }
+    return val;
+}
+
+void ELM327SendCommand(const char *pid)
+{
+    char cmd[8];
+
+    /* Monta o comando com '\r' no final */
+    sprintf(cmd, "%s\r", pid);
+
+    /* Envia pela UART1 (para o ELM327 / veículo) */
+    HAL_UART_Transmit(&huart1, (uint8_t*)cmd, strlen(cmd), HAL_MAX_DELAY);
+}
+
+void ELM327UARTCallback(){
+	if (uart_rx_byte != '\r' && uart_rx_byte != '\n')
+	        {
+	            if (uart_rx_index < UART_RX_BUFFER_SIZE - 1)
+	            {
+	                uart_rx_buffer[uart_rx_index++] = uart_rx_byte;
+	                uart_obd_byte_count += 1;
+	            }
+	        }
+
+	        /* Detecta fim de resposta (prompt '>') */
+	        if (uart_rx_byte == '>')
+	        {
+	            uart_rx_buffer[uart_rx_index++] = '\n'; // separa respostas no buffer
+	            uart_response_count++;
+
+	            if (uart_response_count >= 3)
+	            {
+	                uart_rx_buffer[uart_rx_index] = '\0'; // finaliza string
+	                uart_data_ready = 1;              // todas as respostas chegaram
+	                uart_response_count = 0;              // reseta contador
+	            }
+	        }
+	        //erro de mensagem
+	        if(uart_obd_byte_count > 20){
+                uart_rx_buffer[uart_rx_index] = '\0'; // finaliza string
+                uart_data_ready = 0;              // todas as respostas chegaram
+                uart_response_count = 0;              // reseta contador
+                uart_rx_index =0 ;
+	        }
+
+	        /* Reinicia recepção do próximo byte */
+	        HAL_UART_Receive_IT(&huart1, &uart_rx_byte, 1);
+}
+
+void OBDReadData(){
+
+}
+

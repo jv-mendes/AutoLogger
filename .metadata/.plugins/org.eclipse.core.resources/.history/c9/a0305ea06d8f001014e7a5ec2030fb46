@@ -1,0 +1,133 @@
+#include <string.h>
+#include <stdio.h>
+#include "lsm9ds1_reg.h"
+#include "usart.h"
+#include "i2c.h"
+#include "gpio.h"
+
+///* Estrutura de barramento */
+//typedef struct {
+//  void   *hbus;
+//  uint8_t i2c_address;
+//} sensbus_t;
+
+/* Endereço I2C do IMU (datasheet p. 40) */
+static sensbus_t imu_bus = {
+  &hi2c1,
+  LSM9DS1_IMU_I2C_ADD_H
+};
+
+/* Buffers */
+static int16_t data_raw_accel[3];
+static int16_t data_raw_gyro[3];
+static float_t accel_mg[3];
+static float_t gyro_mdps[3];
+static uint8_t tx_buffer[128];
+
+/* Prototypes */
+static int32_t platform_write_imu(void *handle, uint8_t reg, const uint8_t *bufp, uint16_t len);
+static int32_t platform_read_imu(void *handle, uint8_t reg, uint8_t *bufp, uint16_t len);
+static void tx_com(uint8_t *tx_buffer, uint16_t len);
+static void platform_delay(uint32_t ms);
+static void platform_init(void);
+
+/* Função principal */
+void lsm9ds1_read_imu_polling(void)
+{
+  stmdev_ctx_t dev_ctx_imu;
+  lsm9ds1_id_t whoamI;
+  lsm9ds1_status_t status;
+  uint8_t rst;
+
+  /* Inicializa interface do driver */
+  dev_ctx_imu.write_reg = platform_write_imu;
+  dev_ctx_imu.read_reg  = platform_read_imu;
+  dev_ctx_imu.handle    = (void *)&imu_bus;
+
+  platform_init();
+  platform_delay(20);
+
+  /* Checa ID do dispositivo */
+  lsm9ds1_dev_id_get(NULL, &dev_ctx_imu, &whoamI);
+  if (whoamI.imu != LSM9DS1_IMU_ID) {
+    while (1) {
+      printf((char *)tx_buffer, sizeof(tx_buffer), "IMU NOT FOUND!\r\n");
+      tx_com(tx_buffer, strlen((char *)tx_buffer));
+      platform_delay(500);
+    }
+  }
+
+  /* Reset para default */
+  lsm9ds1_dev_reset_set(NULL, &dev_ctx_imu, PROPERTY_ENABLE);
+  do {
+    lsm9ds1_dev_reset_get(NULL, &dev_ctx_imu, &rst);
+  } while (rst);
+
+  /* Configurações */
+  lsm9ds1_block_data_update_set(NULL, &dev_ctx_imu, PROPERTY_ENABLE);
+  lsm9ds1_xl_full_scale_set(&dev_ctx_imu, LSM9DS1_4g);
+  lsm9ds1_gy_full_scale_set(&dev_ctx_imu, LSM9DS1_2000dps);
+  lsm9ds1_imu_data_rate_set(&dev_ctx_imu, LSM9DS1_IMU_119Hz);
+
+  /* Loop de leitura */
+  while (1) {
+    lsm9ds1_dev_status_get(NULL, &dev_ctx_imu, &status);
+
+    if (status.status_imu.xlda && status.status_imu.gda) {
+      /* Lê dados crus */
+      lsm9ds1_acceleration_raw_get(&dev_ctx_imu, data_raw_accel);
+      lsm9ds1_angular_rate_raw_get(&dev_ctx_imu, data_raw_gyro);
+
+      /* Converte */
+      accel_mg[0] = lsm9ds1_from_fs4g_to_mg(data_raw_accel[0]);
+      accel_mg[1] = lsm9ds1_from_fs4g_to_mg(data_raw_accel[1]);
+      accel_mg[2] = lsm9ds1_from_fs4g_to_mg(data_raw_accel[2]);
+
+      gyro_mdps[0] = lsm9ds1_from_fs2000dps_to_mdps(data_raw_gyro[0]);
+      gyro_mdps[1] = lsm9ds1_from_fs2000dps_to_mdps(data_raw_gyro[1]);
+      gyro_mdps[2] = lsm9ds1_from_fs2000dps_to_mdps(data_raw_gyro[2]);
+
+      /* Print via UART */
+      snprintf((char *)tx_buffer, sizeof(tx_buffer),
+               "ACC [mg]: %.2f %.2f %.2f | GYRO [mdps]: %.2f %.2f %.2f\r\n",
+               accel_mg[0], accel_mg[1], accel_mg[2],
+               gyro_mdps[0], gyro_mdps[1], gyro_mdps[2]);
+
+      tx_com(tx_buffer, strlen((char *)tx_buffer));
+    }
+
+    platform_delay(10);
+  }
+}
+
+/* ------------------- Funções de plataforma ------------------- */
+static int32_t platform_write_imu(void *handle, uint8_t reg, const uint8_t *bufp, uint16_t len)
+{
+  sensbus_t *sensbus = (sensbus_t *)handle;
+  HAL_I2C_Mem_Write(sensbus->hbus, sensbus->i2c_address, reg,
+                    I2C_MEMADD_SIZE_8BIT, (uint8_t*) bufp, len, 1000);
+  return 0;
+}
+
+static int32_t platform_read_imu(void *handle, uint8_t reg, uint8_t *bufp, uint16_t len)
+{
+  sensbus_t *sensbus = (sensbus_t *)handle;
+  HAL_I2C_Mem_Read(sensbus->hbus, sensbus->i2c_address, reg,
+                   I2C_MEMADD_SIZE_8BIT, bufp, len, 1000);
+  return 0;
+}
+
+static void tx_com(uint8_t *tx_buffer, uint16_t len)
+{
+  HAL_UART_Transmit(&huart2, tx_buffer, len, 1000);
+}
+
+static void platform_delay(uint32_t ms)
+{
+  HAL_Delay(ms);
+}
+
+static void platform_init(void)
+{
+  /* Já inicializado pelo CubeMX (I2C1 + USART2) */
+}

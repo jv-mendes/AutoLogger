@@ -1,0 +1,80 @@
+2025-10-22 17:22:47,615 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2025-10-22 17:22:54,154 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 8371mS.
+2025-10-22 17:22:54,155 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 1mS.
+2025-10-22 17:22:54,167 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-10-22 18:08:59,606 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 517389872 Bytes (688914432)
+2025-10-22 18:08:59,779 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 543604272 Bytes (688914432)
+2025-10-22 18:09:00,404 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 647413264 Bytes (688914432)
+2025-10-22 18:09:00,722 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: LPUART
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-10-22 18:09:00,723 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-10-22 18:09:00,724 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-10-22 18:09:00,790 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\license.tmp_save
+2025-10-22 18:09:01,021 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\license.tmp
+2025-10-22 18:09:01,110 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\gpio.c_save
+2025-10-22 18:09:01,264 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\gpio.c
+2025-10-22 18:09:01,278 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\gpio.h_save
+2025-10-22 18:09:01,346 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\gpio.h
+2025-10-22 18:09:01,640 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-10-22 18:09:01,643 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-10-22 18:09:01,652 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\Target\ffconf.h_save
+2025-10-22 18:09:01,806 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\Target\ffconf.h
+2025-10-22 18:09:01,814 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\Target\user_diskio.c_save
+2025-10-22 18:09:01,902 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\Target\user_diskio.c
+2025-10-22 18:09:01,907 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\Target\user_diskio.h_save
+2025-10-22 18:09:01,961 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\Target\user_diskio.h
+2025-10-22 18:09:01,968 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\App\app_fatfs.c_save
+2025-10-22 18:09:02,033 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\App\app_fatfs.c
+2025-10-22 18:09:02,039 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\App\app_fatfs.h_save
+2025-10-22 18:09:02,098 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\FATFS\App\app_fatfs.h
+2025-10-22 18:09:02,109 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\usart.c_save
+2025-10-22 18:09:02,268 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\usart.c
+2025-10-22 18:09:02,274 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\usart.h_save
+2025-10-22 18:09:02,335 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\usart.h
+2025-10-22 18:09:02,348 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\spi.c_save
+2025-10-22 18:09:02,503 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\spi.c
+2025-10-22 18:09:02,513 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\spi.h_save
+2025-10-22 18:09:02,575 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\spi.h
+2025-10-22 18:09:02,593 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_it.c_save
+2025-10-22 18:09:02,801 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_it.c
+2025-10-22 18:09:02,814 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_it.h_save
+2025-10-22 18:09:02,885 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_it.h
+2025-10-22 18:09:02,904 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_hal_msp.c_save
+2025-10-22 18:09:03,017 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\stm32g4xx_hal_msp.c
+2025-10-22 18:09:03,022 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\system.tmp_save
+2025-10-22 18:09:03,071 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\MXTmpFiles\system.tmp
+2025-10-22 18:09:03,085 [INFO] CodeEngine:321 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_hal_conf.h_save
+2025-10-22 18:09:03,216 [INFO] CodeEngine:345 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\stm32g4xx_hal_conf.h
+2025-10-22 18:09:03,241 [WARN] IPConfigManager:3238 - Warning: the RefConfig RCC_CommonPeriphClockConfig is not available in your config.xml file
+2025-10-22 18:09:03,254 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\main.h_save
+2025-10-22 18:09:03,375 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Inc\main.h
+2025-10-22 18:09:03,384 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\main.c_save
+2025-10-22 18:09:03,479 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\fatFsTest\Core\Src\main.c
+2025-10-22 18:09:03,828 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 157mS.
+2025-10-22 18:09:03,834 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-10-22 18:09:03,904 [INFO] ConfigFileManager:1595 - The Die is : DIE469
+2025-10-22 18:09:04,835 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 1002mS.
+2025-10-22 18:09:04,837 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-10-22 18:09:04,846 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-10-22 18:52:08,517 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:27:12,394 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:27:13,583 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:27:13,741 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:28:53,627 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:28:53,847 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:35:11,592 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:35:11,825 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:35:46,183 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:35:46,397 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:35:49,986 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:35:50,218 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:35:55,254 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:35:55,518 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:35:59,436 [INFO] WebApp:194 - Connection lost
+2025-10-22 19:35:59,708 [INFO] WebApp:191 - Connection restablished
+2025-10-22 19:52:07,328 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

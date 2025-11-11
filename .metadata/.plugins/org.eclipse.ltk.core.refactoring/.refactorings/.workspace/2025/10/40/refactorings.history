@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;AutomotiveLogger/Core/Inc/lsm303dlhc.h&apos;" deleteContents="false" description="Delete resource &apos;AutomotiveLogger/Core/Inc/lsm303dlhc.h&apos;" element1="/AutomotiveLogger/Core/Inc/lsm303dlhc.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1759349950779"/>&#x0A;<refactoring comment="Delete resource &apos;AutomotiveLogger/Core/Src/lsm303dlhc.c&apos;" deleteContents="false" description="Delete resource &apos;AutomotiveLogger/Core/Src/lsm303dlhc.c&apos;" element1="/AutomotiveLogger/Core/Src/lsm303dlhc.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1759349954708"/>
+</session>

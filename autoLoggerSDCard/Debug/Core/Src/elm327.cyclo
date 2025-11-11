@@ -1,0 +1,5 @@
+../Core/Src/elm327.c:22:6:ELM327InitDebug	1
+../Core/Src/elm327.c:31:9:hexToByte	8
+../Core/Src/elm327.c:45:6:ELM327SendCommand	1
+../Core/Src/elm327.c:56:6:ELM327UARTCallback	7
+../Core/Src/elm327.c:88:6:OBDReadData	1

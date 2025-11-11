@@ -1,0 +1,163 @@
+2025-09-04 16:15:55,810 [INFO] WebApp:194 - Connection lost
+2025-09-04 16:16:00,376 [INFO] WebApp:191 - Connection restablished
+2025-09-04 16:16:00,576 [INFO] WebApp:194 - Connection lost
+2025-09-04 16:16:01,011 [INFO] WebApp:191 - Connection restablished
+2025-09-04 16:16:01,736 [INFO] WebApp:194 - Connection lost
+2025-09-04 16:16:02,214 [INFO] WebApp:191 - Connection restablished
+2025-09-04 16:16:03,085 [INFO] WebApp:194 - Connection lost
+2025-09-04 16:16:03,382 [INFO] WebApp:191 - Connection restablished
+2025-09-04 16:17:44,666 [INFO] WebApp:194 - Connection lost
+2025-09-04 16:17:44,925 [INFO] WebApp:191 - Connection restablished
+2025-09-04 18:02:18,078 [INFO] WebApp:194 - Connection lost
+2025-09-04 18:02:25,489 [INFO] WebApp:191 - Connection restablished
+2025-09-04 18:02:33,127 [INFO] WebApp:194 - Connection lost
+2025-09-04 18:02:33,391 [INFO] WebApp:191 - Connection restablished
+2025-09-04 18:02:36,407 [INFO] WebApp:194 - Connection lost
+2025-09-04 18:02:36,574 [INFO] WebApp:191 - Connection restablished
+2025-09-04 18:04:09,089 [INFO] WebApp:194 - Connection lost
+2025-09-04 18:04:09,299 [INFO] WebApp:191 - Connection restablished
+2025-09-04 18:10:18,630 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 18:11:53,245 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x212,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-09-04 19:09:20,438 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 19:09:20,813 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 19:09:37,995 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 570638992 Bytes (1073741824)
+2025-09-04 19:09:38,199 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 602050744 Bytes (1073741824)
+2025-09-04 19:09:38,799 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 649820720 Bytes (1073741824)
+2025-09-04 19:09:38,951 [ERROR] IocParser:95 - Exception caught: Cannot invoke "java.lang.CharSequence.length()" because "this.text" is null
+2025-09-04 19:09:39,229 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NUCLEO-G474RE
+2025-09-04 19:09:39,229 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-09-04 19:09:39,230 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-09-04 19:09:39,230 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-09-04 19:09:39,230 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-09-04 19:09:39,231 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-09-04 19:09:39,232 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-09-04 19:09:39,234 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-09-04 19:09:39,299 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\license.tmp_save
+2025-09-04 19:09:39,549 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\license.tmp
+2025-09-04 19:09:39,622 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\gpio.c_save
+2025-09-04 19:09:39,806 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\gpio.c
+2025-09-04 19:09:39,813 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\gpio.h_save
+2025-09-04 19:09:39,928 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\gpio.h
+2025-09-04 19:09:40,222 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\i2c.c_save
+2025-09-04 19:09:40,414 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\i2c.c
+2025-09-04 19:09:40,423 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\i2c.h_save
+2025-09-04 19:09:40,521 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\i2c.h
+2025-09-04 19:09:40,541 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_nucleo_conf.h_save
+2025-09-04 19:09:40,665 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_nucleo_conf.h
+2025-09-04 19:09:40,672 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_inc.tmp_save
+2025-09-04 19:09:40,741 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_inc.tmp
+2025-09-04 19:09:40,752 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_vars.tmp_save
+2025-09-04 19:09:40,822 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_vars.tmp
+2025-09-04 19:09:40,834 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_init.tmp_save
+2025-09-04 19:09:40,891 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_init.tmp
+2025-09-04 19:09:40,903 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_before_while.tmp_save
+2025-09-04 19:09:40,964 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_before_while.tmp
+2025-09-04 19:09:40,975 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_inside_while.tmp_save
+2025-09-04 19:09:41,029 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_inside_while.tmp
+2025-09-04 19:09:41,034 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_fct.tmp_save
+2025-09-04 19:09:41,083 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_fct.tmp
+2025-09-04 19:09:41,097 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\usart.c_save
+2025-09-04 19:09:41,228 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\usart.c
+2025-09-04 19:09:41,234 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\usart.h_save
+2025-09-04 19:09:41,305 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\usart.h
+2025-09-04 19:09:41,321 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_it.c_save
+2025-09-04 19:09:41,528 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_it.c
+2025-09-04 19:09:41,534 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_it.h_save
+2025-09-04 19:09:41,606 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_it.h
+2025-09-04 19:09:41,625 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_hal_msp.c_save
+2025-09-04 19:09:41,761 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_hal_msp.c
+2025-09-04 19:09:41,770 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\system.tmp_save
+2025-09-04 19:09:41,827 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\system.tmp
+2025-09-04 19:09:41,848 [INFO] CodeEngine:321 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_hal_conf.h_save
+2025-09-04 19:09:41,964 [INFO] CodeEngine:345 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_hal_conf.h
+2025-09-04 19:09:41,988 [WARN] IPConfigManager:3238 - Warning: the RefConfig RCC_CommonPeriphClockConfig is not available in your config.xml file
+2025-09-04 19:09:41,999 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\main.h_save
+2025-09-04 19:09:42,137 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\main.h
+2025-09-04 19:09:42,147 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\main.c_save
+2025-09-04 19:09:42,250 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\main.c
+2025-09-04 19:09:42,632 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 277mS.
+2025-09-04 19:09:42,640 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-09-04 19:09:42,756 [INFO] ConfigFileManager:1595 - The Die is : DIE469
+2025-09-04 19:09:43,694 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 1055mS.
+2025-09-04 19:09:43,696 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-09-04 19:09:43,703 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-09-04 19:30:20,239 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 19:30:20,409 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 19:31:23,745 [INFO] Gpio:278 - dependency for GPIO [I2C1, USART2]
+2025-09-04 19:32:01,232 [INFO] Gpio:278 - dependency for GPIO [I2C1, USART2]
+2025-09-04 19:32:01,460 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 19:32:11,994 [INFO] Gpio:278 - dependency for GPIO [I2C1, USART2]
+2025-09-04 19:32:18,530 [INFO] I2cTimingTraitement:330 - 0x40B285C2
+2025-09-04 19:54:30,331 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 551350312 Bytes (1073741824)
+2025-09-04 19:54:30,475 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 577649056 Bytes (1073741824)
+2025-09-04 19:54:30,783 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 617926176 Bytes (1073741824)
+2025-09-04 19:54:30,998 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NUCLEO-G474RE
+2025-09-04 19:54:30,998 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-09-04 19:54:30,998 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-09-04 19:54:30,998 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-09-04 19:54:30,999 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-09-04 19:54:30,999 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-09-04 19:54:30,999 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-09-04 19:54:31,001 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-09-04 19:54:31,066 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\license.tmp_save
+2025-09-04 19:54:31,332 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\license.tmp
+2025-09-04 19:54:31,383 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\gpio.c_save
+2025-09-04 19:54:31,588 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\gpio.c
+2025-09-04 19:54:31,595 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\gpio.h_save
+2025-09-04 19:54:31,698 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\gpio.h
+2025-09-04 19:54:31,847 [ERROR] IocParser:95 - Exception caught: Cannot invoke "java.lang.CharSequence.length()" because "this.text" is null
+2025-09-04 19:54:31,946 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\i2c.c_save
+2025-09-04 19:54:32,158 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\i2c.c
+2025-09-04 19:54:32,165 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\i2c.h_save
+2025-09-04 19:54:32,248 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\i2c.h
+2025-09-04 19:54:32,269 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_nucleo_conf.h_save
+2025-09-04 19:54:32,380 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_nucleo_conf.h
+2025-09-04 19:54:32,387 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_inc.tmp_save
+2025-09-04 19:54:32,464 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_inc.tmp
+2025-09-04 19:54:32,471 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_vars.tmp_save
+2025-09-04 19:54:32,554 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_vars.tmp
+2025-09-04 19:54:32,563 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_init.tmp_save
+2025-09-04 19:54:32,642 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_init.tmp
+2025-09-04 19:54:32,649 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_before_while.tmp_save
+2025-09-04 19:54:32,736 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_before_while.tmp
+2025-09-04 19:54:32,743 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_inside_while.tmp_save
+2025-09-04 19:54:32,818 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_inside_while.tmp
+2025-09-04 19:54:32,823 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_fct.tmp_save
+2025-09-04 19:54:32,902 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\bsp_common_demo_fct.tmp
+2025-09-04 19:54:32,916 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\usart.c_save
+2025-09-04 19:54:33,088 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\usart.c
+2025-09-04 19:54:33,099 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\usart.h_save
+2025-09-04 19:54:33,178 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\usart.h
+2025-09-04 19:54:33,194 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_it.c_save
+2025-09-04 19:54:33,449 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_it.c
+2025-09-04 19:54:33,457 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_it.h_save
+2025-09-04 19:54:33,512 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_it.h
+2025-09-04 19:54:33,530 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_hal_msp.c_save
+2025-09-04 19:54:33,643 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\stm32g4xx_hal_msp.c
+2025-09-04 19:54:33,648 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\system.tmp_save
+2025-09-04 19:54:33,693 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\MXTmpFiles\system.tmp
+2025-09-04 19:54:33,705 [INFO] CodeEngine:321 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_hal_conf.h_save
+2025-09-04 19:54:33,822 [INFO] CodeEngine:345 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\stm32g4xx_hal_conf.h
+2025-09-04 19:54:33,847 [WARN] IPConfigManager:3238 - Warning: the RefConfig RCC_CommonPeriphClockConfig is not available in your config.xml file
+2025-09-04 19:54:33,857 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\main.h_save
+2025-09-04 19:54:33,970 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Inc\main.h
+2025-09-04 19:54:33,980 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\main.c_save
+2025-09-04 19:54:34,071 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\AutomotiveLogger\Core\Src\main.c
+2025-09-04 19:54:34,428 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 227mS.
+2025-09-04 19:54:34,433 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-09-04 19:54:34,497 [INFO] ConfigFileManager:1595 - The Die is : DIE469
+2025-09-04 19:54:35,499 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 1066mS.
+2025-09-04 19:54:35,500 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 1mS.
+2025-09-04 19:54:35,504 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-09-04 23:35:10,988 [INFO] WebApp:194 - Connection lost
+2025-09-04 23:35:37,001 [INFO] WebApp:191 - Connection restablished
+2025-09-04 23:35:38,462 [INFO] WebApp:194 - Connection lost
+2025-09-04 23:35:38,649 [INFO] WebApp:191 - Connection restablished
+2025-09-04 23:35:39,075 [INFO] WebApp:194 - Connection lost
+2025-09-04 23:35:39,481 [INFO] WebApp:191 - Connection restablished
+2025-09-04 23:37:00,781 [INFO] WebApp:194 - Connection lost
+2025-09-04 23:37:01,037 [INFO] WebApp:191 - Connection restablished
+2025-09-04 23:53:29,967 [INFO] WebApp:194 - Connection lost
+2025-09-04 23:53:30,220 [INFO] WebApp:191 - Connection restablished
+2025-09-04 23:53:40,181 [INFO] WebApp:194 - Connection lost
+2025-09-04 23:53:40,455 [INFO] WebApp:191 - Connection restablished

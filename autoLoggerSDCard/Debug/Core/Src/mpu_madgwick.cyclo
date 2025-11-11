@@ -1,0 +1,4 @@
+../Core/Src/mpu_madgwick.c:38:6:MadgwickAHRSupdateIMU	4
+../Core/Src/mpu_madgwick.c:120:6:QuaternionToEulerDegrees	2
+../Core/Src/mpu_madgwick.c:144:6:CalibrateGyro	2
+../Core/Src/mpu_madgwick.c:163:6:IMU_Update	1

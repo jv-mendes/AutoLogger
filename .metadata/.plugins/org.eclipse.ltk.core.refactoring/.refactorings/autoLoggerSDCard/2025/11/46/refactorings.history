@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;autoLoggerSDCard/Core/Inc/AppSDCyclicWrite.h&apos; to &apos;appSDCyclicWrite.h&apos;" description="Rename resource &apos;AppSDCyclicWrite.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/AppSDCyclicWrite.h" name="appSDCyclicWrite.h" stamp="1762828084288" updateReferences="true"/>
+</session>

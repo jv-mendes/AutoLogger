@@ -1,0 +1,8 @@
+../Core/Src/MPU6050.c:57:6:MPU6050_init	32	static
+../Core/Src/MPU6050.c:86:6:MPU6050_Read_Accel	48	static
+../Core/Src/MPU6050.c:102:6:MPU6050_Read_Gyro	48	static
+../Core/Src/MPU6050.c:119:6:MPU6050_SetReference	32	static
+../Core/Src/MPU6050.c:127:6:MPU6050_Get_Accel_Relative	56	static
+../Core/Src/MPU6050.c:152:6:MPU6050_Get_Lin_Accel	72	static
+../Core/Src/MPU6050.c:197:6:MPU6050AddSample	32	static
+../Core/Src/MPU6050.c:237:6:MPU6050ComputeMean	24	static
