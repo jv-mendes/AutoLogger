@@ -44,7 +44,6 @@
 #include "elm327.h"
 
 //sd
-#include "appSDCyclicWrite.h"
 
 /* USER CODE END Includes */
 
@@ -174,7 +173,7 @@ int main(void)
 
 
   //test MiniSD card
-    sd_mount();
+    //sd_mount();
 //  sd_append_file("File10.txt", "NEW DATA FROM AUTOLOGGER\n\r");
 //  sd_read_file("File10.txt", bufr, 80, &br);
 //  printf("DATA from File:::: %s\n\n",bufr);
@@ -243,9 +242,9 @@ int main(void)
 			  __enable_irq();
 
 			if(ready2SaveFlag){
-				__disable_irq();
+//				__disable_irq();
 				SDCyclicFlush(&SDLogger, "log.csv");
-				__enable_irq();
+//				__enable_irq();
 				ready2SaveFlag = 0;
 			}
 			HAL_Delay(50);
@@ -259,7 +258,7 @@ int main(void)
 	  printf("Idle Mode On \n\r");
 	  HAL_Delay(1000);
 	  if(SDLogger.mounted)
-		  sd_unmount();
+		  sd_unmount(&SDLogger);
   }
   }
   /* USER CODE END 3 */

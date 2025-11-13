@@ -38,7 +38,7 @@ Core/Src/sd_benchmark.o: ../Core/Src/sd_benchmark.c \
  ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
- ../Core/Inc/sd_functions.h
+ ../Core/Inc/sd_functions.h ../Core/Inc/main.h
 ../Core/Inc/sd_benchmark.h:
 ../FATFS/App/app_fatfs.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
@@ -83,3 +83,4 @@ Core/Src/sd_benchmark.o: ../Core/Src/sd_benchmark.c \
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../FATFS/Target/user_diskio.h:
 ../Core/Inc/sd_functions.h:
+../Core/Inc/main.h:

@@ -42,7 +42,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/sd_functions.h ../Core/Inc/sd_benchmark.h \
  ../Core/Inc/dataBuffer.h ../Core/Inc/MPU6050.h \
  ../Core/Inc/mpu_madgwick.h ../Core/Inc/MPU6050.h ../Core/Inc/gps.h \
- ../Core/Inc/elm327.h ../Core/Inc/usart.h ../Core/Inc/appSDCyclicWrite.h
+ ../Core/Inc/elm327.h ../Core/Inc/usart.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -100,4 +100,3 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/gps.h:
 ../Core/Inc/elm327.h:
 ../Core/Inc/usart.h:
-../Core/Inc/appSDCyclicWrite.h:

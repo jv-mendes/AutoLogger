@@ -24,8 +24,90 @@
 #include "ff.h"
 #include "ffconf.h"
 
+#include "sd_functions.h"
+#include "app_fatfs.h"
+#include <stdio.h>
+
 char sd_path[4];
 FATFS fs;
+
+void SDCyclicInit(SDCyclic_t *sd)
+{
+    FRESULT res;
+
+
+	// Monta o SD
+//	res = f_mount(&fs, sd_path, 1);
+//	//res = f_mount(&USERFatFs, sd, 1);
+//	if (res != FR_OK) {
+//		printf("[SD] Mount failed (%d)\r\n", res);
+//		return false;
+//	    }
+    sd_mount();
+    sd->head = 0;
+    sd->tail = 0;
+    sd->lineCount = 0;
+    sd->mounted = 1;
+
+//    return true;
+
+}
+
+void SDCyclicAddLine(SDCyclic_t *sd, const char *line)
+{
+	sd->lineCount += 1;
+    uint16_t len = strlen(line);
+    for (uint16_t i = 0; i < len; i++) {
+        sd->buffer[sd->head] = line[i];
+        sd->head = (sd->head + 1) % SDCYCLIC_BUFFER_SIZE;
+
+        // sobrescreve se cheioS
+        if (sd->head == sd->tail){
+            sd->tail = (sd->tail + 1) % SDCYCLIC_BUFFER_SIZE;
+            sd->lineCount -= 1;
+        }
+    }
+}
+
+bool SDCyclicFlush(SDCyclic_t *sd, const char *filename)
+{
+
+    if (sd->head == sd->tail)
+        return false; // nada a gravar
+
+    FRESULT res;
+    FIL file;
+    UINT bw;
+    char temp[SDCYCLIC_TEMP_SIZE];
+
+    // Abre (ou cria) o arquivo
+    res = f_open(&file, filename, FA_OPEN_APPEND | FA_WRITE);
+    if (res != FR_OK) {
+        printf("[SD] File open failed (%d)\r\n", res);
+        f_mount(NULL, "", 0);
+        return false;
+    }
+
+    // Escreve o buffer circular
+    while (sd->tail != sd->head) {
+        uint16_t count = 0;
+
+        while (sd->tail != sd->head && count < sizeof(temp)) {
+            temp[count++] = sd->buffer[sd->tail];
+            sd->tail = (sd->tail + 1) % SDCYCLIC_BUFFER_SIZE;
+        }
+
+        f_write(&file, temp, count, &bw);
+    }
+
+    f_sync(&file);
+    f_close(&file);
+//    f_mount(NULL, "", 0);
+//    printf("[SD] Flushed and unmounted.\r\n");
+    sd->lineCount = 0;
+
+    return true;
+}
 
 //int sd_format(void) {
 //	// Pre-mount required for legacy FatFS
@@ -116,9 +198,10 @@ int sd_mount(void) {
 }
 
 
-int sd_unmount(void) {
+int sd_unmount(SDCyclic_t *sd) {
 	FRESULT res = f_mount(NULL, sd_path, 1);
 	printf("SD card unmounted: %s\r\n", (res == FR_OK) ? "OK" : "Failed");
+	sd->mounted = 0;
 	return res;
 }
 
@@ -181,11 +264,11 @@ int sd_read_file(const char *filename, char *buffer, UINT bufsize, UINT *bytes_r
 	return FR_OK;
 }
 
-typedef struct CsvRecord {
-	char field1[32];
-	char field2[32];
-	int value;
-} CsvRecord;
+//typedef struct CsvRecord {
+//	char field1[32];
+//	char field2[32];
+//	int value;
+//} CsvRecord;
 
 int sd_read_csv(const char *filename, CsvRecord *records, int max_records, int *record_count) {
 	FIL file;
@@ -266,7 +349,7 @@ void sd_list_directory_recursive(const char *path, int depth) {
 		if (fno.fattrib & AM_DIR) {
 			if (strcmp(name, ".") && strcmp(name, "..")) {
 				printf("%*s📁 %s\r\n", depth * 2, "", name);
-				char newpath[128];
+				char newpath[256];
 				snprintf(newpath, sizeof(newpath), "%s/%s", path, name);
 				sd_list_directory_recursive(newpath, depth + 1);
 			}

@@ -39,7 +39,7 @@ Core/Src/sd_functions.o: ../Core/Src/sd_functions.c \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
  ../Core/Inc/sd_diskio_spi.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h ../Core/Inc/sd_spi.h \
- ../Core/Inc/main.h
+ ../Core/Inc/main.h ../Core/Inc/sd_functions.h
 ../FATFS/App/app_fatfs.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../Middlewares/Third_Party/FatFs/src/integer.h:
@@ -86,3 +86,4 @@ Core/Src/sd_functions.o: ../Core/Src/sd_functions.c \
 ../Middlewares/Third_Party/FatFs/src/diskio.h:
 ../Core/Inc/sd_spi.h:
 ../Core/Inc/main.h:
+../Core/Inc/sd_functions.h:

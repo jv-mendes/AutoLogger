@@ -18,12 +18,37 @@
 
 #include "app_fatfs.h"
 #include <stdint.h>
+#include "main.h"
+#include "stdio.h"
+#include "string.h"
+#include "stdbool.h"
+
+#define SDCYCLIC_BUFFER_SIZE   16384  // 8 KB buffer em RAM
+#define SDCYCLIC_TEMP_SIZE      256  // chunk temporário de escrita
+
+// CSV Record structure
+typedef struct CsvRecord {
+    char field1[32];
+    char field2[32];
+    int value;
+} CsvRecord;
+
+typedef struct {
+    char buffer[SDCYCLIC_BUFFER_SIZE];  // buffer circular
+    volatile uint16_t head;             // índice de escrita
+    volatile uint16_t tail;             // índice de leitura
+    volatile uint16_t lineCount;        // número de linhas registradas
+    FIL file;
+    uint8_t mounted;
+    uint8_t fileOpen;// flag interno (não usado no novo modelo)
+} SDCyclic_t;
+
 
 extern char sd_path[];
 
 // Mount and unmount
 int sd_mount(void);
-int sd_unmount(void);
+int sd_unmount(SDCyclic_t *sd);
 
 // Basic file operations
 int sd_write_file(const char *filename, const char *text);
@@ -42,14 +67,18 @@ void sd_list_files(void);
 int sd_get_space_kb(void);
 
 //csv File operations
-// CSV Record structure
-typedef struct CsvRecord {
-    char field1[32];
-    char field2[32];
-    int value;
-} CsvRecord;
 
 // CSV reader (caller defines record array)
 int sd_read_csv(const char *filename, CsvRecord *records, int max_records, int *record_count);
+
+
+// Inicializa a estrutura (zera índices e flags)
+void SDCyclicInit(SDCyclic_t *sd);
+
+// Adiciona uma linha ao buffer (sem montar o SD)
+void SDCyclicAddLine(SDCyclic_t *sd, const char *line);
+
+// Monta o SD, grava o conteúdo do buffer e desmonta (automático)
+bool SDCyclicFlush(SDCyclic_t *sd, const char *filename);
 
 #endif // __SD_FUNCTIONS_H__

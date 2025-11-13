@@ -1,3 +1,0 @@
-../Core/Src/appSDCyclicWrite.c:11:6:SDCyclicInit	16	static
-../Core/Src/appSDCyclicWrite.c:19:6:SDCyclicAddLine	24	static
-../Core/Src/appSDCyclicWrite.c:35:6:SDCyclicFlush	840	static

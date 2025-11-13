@@ -1,5 +1,4 @@
 "./Core/Src/MPU6050.o"
-"./Core/Src/appSDCyclicWrite.o"
 "./Core/Src/dataBuffer.o"
 "./Core/Src/elm327.o"
 "./Core/Src/gpio.o"

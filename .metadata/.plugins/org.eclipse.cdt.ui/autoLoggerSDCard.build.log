@@ -1,9 +1,9 @@
-12:55:40 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
+20:08:19 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:186:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  186 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
+../Core/Src/main.c:185:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+  185 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
       |                                                                   ^~
 arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: autoLoggerSDCard.elf
@@ -11,11 +11,11 @@ Finished building target: autoLoggerSDCard.elf
 arm-none-eabi-size  autoLoggerSDCard.elf 
 arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
    text	   data	    bss	    dec	    hex	filename
-  77648	    476	  26232	 104356	  197a4	autoLoggerSDCard.elf
+  77616	    476	  26792	 104884	  199b4	autoLoggerSDCard.elf
 Finished building: default.size.stdout
  
 Finished building: autoLoggerSDCard.list
  
 
-12:55:42 Build Finished. 0 errors, 1 warnings. (took 1s.688ms)
+20:08:21 Build Finished. 0 errors, 1 warnings. (took 1s.779ms)
 

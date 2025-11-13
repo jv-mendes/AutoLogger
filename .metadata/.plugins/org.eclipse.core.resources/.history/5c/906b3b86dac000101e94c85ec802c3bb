@@ -1,0 +1,86 @@
+/******************************************************************************
+ *  File        : sd_functions.h
+ *  Author      : ControllersTech
+ *  Website     : https://controllerstech.com
+ *  Date        : June 26, 2025
+ *
+ *  Description :
+ *    This file is part of a custom STM32/Embedded tutorial series.
+ *    For documentation, updates, and more examples, visit the website above.
+ *
+ *  Note :
+ *    This code is written and maintained by ControllersTech.
+ *    You are free to use and modify it for learning and development.
+ ******************************************************************************/
+
+#ifndef __SD_FUNCTIONS_H__
+#define __SD_FUNCTIONS_H__
+
+#include "app_fatfs.h"
+#include <stdint.h>
+#include "main.h"
+#include "stdio.h"
+#include "string.h"
+#include "stdbool.h"
+
+#define SDCYCLIC_BUFFER_SIZE   16384  // 8 KB buffer em RAM
+#define SDCYCLIC_TEMP_SIZE      256  // chunk temporário de escrita
+
+
+
+extern char sd_path[];
+
+// Mount and unmount
+int sd_mount(void);
+int sd_unmount(void);
+
+// Basic file operations
+int sd_write_file(const char *filename, const char *text);
+int sd_append_file(const char *filename, const char *text);
+int sd_read_file(const char *filename, char *buffer, UINT bufsize, UINT *bytes_read);
+int sd_delete_file(const char *filename);
+int sd_rename_file(const char *oldname, const char *newname);
+
+
+// Directory handling
+FRESULT sd_create_directory(const char *path);
+void sd_list_directory_recursive(const char *path, int depth);
+void sd_list_files(void);
+
+// Space information
+int sd_get_space_kb(void);
+
+//csv File operations
+// CSV Record structure
+typedef struct CsvRecord {
+    char field1[32];
+    char field2[32];
+    int value;
+} CsvRecord;
+
+typedef struct {
+    char buffer[SDCYCLIC_BUFFER_SIZE];  // buffer circular
+    volatile uint16_t head;             // índice de escrita
+    volatile uint16_t tail;             // índice de leitura
+    volatile uint16_t lineCount;        // número de linhas registradas
+    FIL file;
+    uint8_t mounted;
+    uint8_t fileOpen;// flag interno (não usado no novo modelo)
+} SDCyclic_t;
+
+// CSV reader (caller defines record array)
+int sd_read_csv(const char *filename, CsvRecord *records, int max_records, int *record_count);
+
+
+// === Funções principais ===
+
+// Inicializa a estrutura (zera índices e flags)
+void SDCyclicInit(SDCyclic_t *sd);
+
+// Adiciona uma linha ao buffer (sem montar o SD)
+void SDCyclicAddLine(SDCyclic_t *sd, const char *line);
+
+// Monta o SD, grava o conteúdo do buffer e desmonta (automático)
+bool SDCyclicFlush(SDCyclic_t *sd, const char *filename);
+
+#endif // __SD_FUNCTIONS_H__
