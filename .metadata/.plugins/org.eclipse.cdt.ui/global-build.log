@@ -1,30 +1,9 @@
-23:16:28 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-gcc "../Core/Src/appSDCyclicWrite.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/appSDCyclicWrite.d" -MT"Core/Src/appSDCyclicWrite.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/appSDCyclicWrite.o"
-arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: autoLoggerSDCard.elf
- 
-arm-none-eabi-size  autoLoggerSDCard.elf 
-arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
-   text	   data	    bss	    dec	    hex	filename
-  77536	    476	  26224	 104236	  1972c	autoLoggerSDCard.elf
-Finished building: default.size.stdout
- 
-Finished building: autoLoggerSDCard.list
- 
-23:16:34 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-size  autoLoggerSDCard.elf 
-   text	   data	    bss	    dec	    hex	filename
-  77536	    476	  26224	 104236	  1972c	autoLoggerSDCard.elf
-Finished building: default.size.stdout
- 
-23:17:42 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
+12:43:49 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:185:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  185 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
+../Core/Src/main.c:186:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+  186 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
       |                                                                   ^~
 arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: autoLoggerSDCard.elf
@@ -32,135 +11,24 @@ Finished building target: autoLoggerSDCard.elf
 arm-none-eabi-size  autoLoggerSDCard.elf 
 arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
    text	   data	    bss	    dec	    hex	filename
-  77528	    476	  26224	 104228	  19724	autoLoggerSDCard.elf
+  77576	    476	  26232	 104284	  1975c	autoLoggerSDCard.elf
 Finished building: default.size.stdout
  
 Finished building: autoLoggerSDCard.list
  
-23:19:34 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
+12:44:06 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/Src/appSDCyclicWrite.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/appSDCyclicWrite.d" -MT"Core/Src/appSDCyclicWrite.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/appSDCyclicWrite.o"
-../Core/Src/appSDCyclicWrite.c: In function 'SDCyclicFlush':
-../Core/Src/appSDCyclicWrite.c:77:5: error: 'SDLogger' undeclared (first use in this function)
-   77 |     SDLogger->lineCount = 0;
-      |     ^~~~~~~~
-../Core/Src/appSDCyclicWrite.c:77:5: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/subdir.mk:79: Core/Src/appSDCyclicWrite.o] Error 1
-"make -j16 all" terminated with exit code 2. Build might be incomplete.
-23:19:49 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-gcc "../Core/Src/appSDCyclicWrite.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/appSDCyclicWrite.d" -MT"Core/Src/appSDCyclicWrite.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/appSDCyclicWrite.o"
-arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: autoLoggerSDCard.elf
- 
 arm-none-eabi-size  autoLoggerSDCard.elf 
-arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
    text	   data	    bss	    dec	    hex	filename
-  77552	    476	  26224	 104252	  1973c	autoLoggerSDCard.elf
+  77576	    476	  26232	 104284	  1975c	autoLoggerSDCard.elf
 Finished building: default.size.stdout
  
-Finished building: autoLoggerSDCard.list
- 
-23:23:01 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/ccsbcs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/ccsbcs.d" -MT"Middlewares/Third_Party/FatFs/src/option/ccsbcs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/option/ccsbcs.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/syscall.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/syscall.d" -MT"Middlewares/Third_Party/FatFs/src/option/syscall.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/option/syscall.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/diskio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/diskio.d" -MT"Middlewares/Third_Party/FatFs/src/diskio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/diskio.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff.d" -MT"Middlewares/Third_Party/FatFs/src/ff.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/ff.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff_gen_drv.d" -MT"Middlewares/Third_Party/FatFs/src/ff_gen_drv.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/ff_gen_drv.o"
-arm-none-eabi-gcc "../FATFS/Target/user_diskio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"FATFS/Target/user_diskio.d" -MT"FATFS/Target/user_diskio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "FATFS/Target/user_diskio.o"
-arm-none-eabi-gcc "../FATFS/App/app_fatfs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"FATFS/App/app_fatfs.d" -MT"FATFS/App/app_fatfs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "FATFS/App/app_fatfs.o"
-arm-none-eabi-gcc "../Core/Src/appSDCyclicWrite.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/appSDCyclicWrite.d" -MT"Core/Src/appSDCyclicWrite.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/appSDCyclicWrite.o"
-arm-none-eabi-gcc "../Core/Src/dataBuffer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/dataBuffer.d" -MT"Core/Src/dataBuffer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dataBuffer.o"
-arm-none-eabi-gcc "../Core/Src/elm327.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/elm327.d" -MT"Core/Src/elm327.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/elm327.o"
-arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
-arm-none-eabi-gcc "../Core/Src/gps.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gps.d" -MT"Core/Src/gps.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gps.o"
-arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/i2c.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/mpu_madgwick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/mpu_madgwick.d" -MT"Core/Src/mpu_madgwick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/mpu_madgwick.o"
-arm-none-eabi-gcc "../Core/Src/sd_benchmark.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sd_benchmark.d" -MT"Core/Src/sd_benchmark.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sd_benchmark.o"
-../Middlewares/Third_Party/FatFs/src/ff.c: In function 'f_setlabel':
-../Middlewares/Third_Party/FatFs/src/ff.c:5032:9: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
- 5032 |         for (slen = 0; (UINT)label[slen] >= ' '; slen++) ;      /* Get name length */
-      |         ^~~
-../Middlewares/Third_Party/FatFs/src/ff.c:5052:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
- 5052 |         {       /* On the FAT12/16/32 volume */
-      |         ^
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:185:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  185 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
-      |                                                                   ^~
-../Core/Src/mpu_madgwick.c:13: warning: "SAMPLE_DT" redefined
-   13 | #define SAMPLE_DT      (1.0f/SAMPLE_HZ)
-      | 
-In file included from ../Core/Src/mpu_madgwick.c:7:
-../Core/Inc/mpu_madgwick.h:18: note: this is the location of the previous definition
-   18 | #define SAMPLE_DT       (1.0f / SAMPLE_HZ)
-      | 
-../Core/Src/mpu_madgwick.c: In function 'MadgwickAHRSupdateIMU':
-../Core/Src/mpu_madgwick.c:74:11: warning: unused variable '_2q2q3' [-Wunused-variable]
-   74 |     float _2q2q3 = 2.0f * q2 * q3;
-      |           ^~~~~~
-../Core/Src/mpu_madgwick.c:73:11: warning: unused variable '_2q0q2' [-Wunused-variable]
-   73 |     float _2q0q2 = 2.0f * q0 * q2;
-      |           ^~~~~~
-../Core/Src/mpu_madgwick.c:56:11: warning: unused variable 'q3q3' [-Wunused-variable]
-   56 |     float q3q3 = q3 * q3;
-      |           ^~~~
-../Core/Src/mpu_madgwick.c:55:11: warning: unused variable 'q2q2' [-Wunused-variable]
-   55 |     float q2q2 = q2 * q2;
-      |           ^~~~
-../Core/Src/mpu_madgwick.c:54:11: warning: unused variable 'q1q1' [-Wunused-variable]
-   54 |     float q1q1 = q1 * q1;
-      |           ^~~~
-../Core/Src/mpu_madgwick.c:53:11: warning: unused variable 'q0q0' [-Wunused-variable]
-   53 |     float q0q0 = q0 * q0;
-      |           ^~~~
-../Core/Src/mpu_madgwick.c:52:11: warning: unused variable '_8q2' [-Wunused-variable]
-   52 |     float _8q2 = 8.0f * q2;
-      |           ^~~~
-../Core/Src/mpu_madgwick.c:51:11: warning: unused variable '_8q1' [-Wunused-variable]
-   51 |     float _8q1 = 8.0f * q1;
-      |           ^~~~
-../Core/Src/mpu_madgwick.c:48:11: warning: unused variable '_4q0' [-Wunused-variable]
-   48 |     float _4q0 = 4.0f * q0;
-      |           ^~~~
-arm-none-eabi-gcc "../Core/Src/sd_diskio_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sd_diskio_spi.d" -MT"Core/Src/sd_diskio_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sd_diskio_spi.o"
-arm-none-eabi-gcc "../Core/Src/sd_functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sd_functions.d" -MT"Core/Src/sd_functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sd_functions.o"
-arm-none-eabi-gcc "../Core/Src/sd_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sd_spi.d" -MT"Core/Src/sd_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sd_spi.o"
-arm-none-eabi-gcc "../Core/Src/spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/spi.d" -MT"Core/Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/spi.o"
-arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
-arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
-arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
-../Core/Src/sd_diskio_spi.c:74:5: warning: initialization of 'DRESULT (*)(BYTE,  const BYTE *, DWORD,  UINT)' {aka 'DRESULT (*)(unsigned char,  const unsigned char *, long unsigned int,  unsigned int)'} from incompatible pointer type 'DRESULT (*)(BYTE,  BYTE *, DWORD,  UINT)' {aka 'DRESULT (*)(unsigned char,  unsigned char *, long unsigned int,  unsigned int)'} [-Wincompatible-pointer-types]
-   74 |     SD_disk_write,
-      |     ^~~~~~~~~~~~~
-../Core/Src/sd_diskio_spi.c:74:5: note: (near initialization for 'SD_Driver.disk_write')
-../Core/Src/sd_functions.c: In function 'sd_list_directory_recursive':
-../Core/Src/sd_functions.c:270:72: warning: '%s' directive output may be truncated writing up to 255 bytes into a region of size 127 [-Wformat-truncation=]
-  270 |                                 snprintf(newpath, sizeof(newpath), "%s/%s", path, name);
-      |                                                                        ^~
-../Core/Src/sd_functions.c:270:33: note: 'snprintf' output 2 or more bytes (assuming 257) into a destination of size 128
-  270 |                                 snprintf(newpath, sizeof(newpath), "%s/%s", path, name);
-      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: autoLoggerSDCard.elf
- 
-arm-none-eabi-size  autoLoggerSDCard.elf 
-arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
-   text	   data	    bss	    dec	    hex	filename
-  77552	    476	  26224	 104252	  1973c	autoLoggerSDCard.elf
-Finished building: default.size.stdout
- 
-Finished building: autoLoggerSDCard.list
- 
-23:23:41 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
+12:53:34 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:185:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  185 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
+../Core/Src/main.c:186:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+  186 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
       |                                                                   ^~
 arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: autoLoggerSDCard.elf
@@ -168,24 +36,17 @@ Finished building target: autoLoggerSDCard.elf
 arm-none-eabi-size  autoLoggerSDCard.elf 
 arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
    text	   data	    bss	    dec	    hex	filename
-  77552	    476	  26224	 104252	  1973c	autoLoggerSDCard.elf
+  77648	    476	  26232	 104356	  197a4	autoLoggerSDCard.elf
 Finished building: default.size.stdout
  
 Finished building: autoLoggerSDCard.list
  
-23:26:18 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-size  autoLoggerSDCard.elf 
-   text	   data	    bss	    dec	    hex	filename
-  77552	    476	  26224	 104252	  1973c	autoLoggerSDCard.elf
-Finished building: default.size.stdout
- 
-23:28:00 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
+12:55:40 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:185:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  185 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
+../Core/Src/main.c:186:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+  186 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
       |                                                                   ^~
 arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: autoLoggerSDCard.elf
@@ -193,32 +54,7 @@ Finished building target: autoLoggerSDCard.elf
 arm-none-eabi-size  autoLoggerSDCard.elf 
 arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
    text	   data	    bss	    dec	    hex	filename
-  77632	    476	  26224	 104332	  1978c	autoLoggerSDCard.elf
-Finished building: default.size.stdout
- 
-Finished building: autoLoggerSDCard.list
- 
-23:29:49 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-size  autoLoggerSDCard.elf 
-   text	   data	    bss	    dec	    hex	filename
-  77632	    476	  26224	 104332	  1978c	autoLoggerSDCard.elf
-Finished building: default.size.stdout
- 
-23:31:27 **** Incremental Build of configuration Debug for project autoLoggerSDCard ****
-make -j16 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:185:67: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  185 |   HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, 0b1101000 <<1 + 0 , 1, 100);
-      |                                                                   ^~
-arm-none-eabi-gcc -o "autoLoggerSDCard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="autoLoggerSDCard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: autoLoggerSDCard.elf
- 
-arm-none-eabi-size  autoLoggerSDCard.elf 
-arm-none-eabi-objdump -h -S autoLoggerSDCard.elf  > "autoLoggerSDCard.list"
-   text	   data	    bss	    dec	    hex	filename
-  77552	    476	  26224	 104252	  1973c	autoLoggerSDCard.elf
+  77648	    476	  26232	 104356	  197a4	autoLoggerSDCard.elf
 Finished building: default.size.stdout
  
 Finished building: autoLoggerSDCard.list

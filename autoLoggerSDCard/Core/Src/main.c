@@ -69,7 +69,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+//idle
+char idleMode = 0;
 //miniSD CARD
 uint8_t bufr[80];
 UINT br;
@@ -173,7 +174,7 @@ int main(void)
 
 
   //test MiniSD card
-   //sd_mount();
+    sd_mount();
 //  sd_append_file("File10.txt", "NEW DATA FROM AUTOLOGGER\n\r");
 //  sd_read_file("File10.txt", bufr, 80, &br);
 //  printf("DATA from File:::: %s\n\n",bufr);
@@ -214,72 +215,52 @@ int main(void)
   static char line[160];
   while (1)
   {
-	  //copia o data para eviat problemas de inserção e remoção comcomitante
-      __disable_irq();
-      if(dataBufferPop(&dataBuffer, &dataSnapshot)){
-    	  __enable_irq();
-    	  sprintf(line,
-    	          "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
-    	          dataSnapshot.pitch_deg, dataSnapshot.roll_deg, dataSnapshot.yaw_deg,
-    	          dataSnapshot.linAx_ms2, dataSnapshot.linAy_ms2, dataSnapshot.linAz_ms2,
-    	          dataSnapshot.latitude, dataSnapshot.longitude,
-    	          dataSnapshot.velocity, dataSnapshot.motorRPM,
-    	          dataSnapshot.fuelConsumption, dataSnapshot.throttle, dataSnapshot.gear);
+	  if(!idleMode){
+		  //copia o data para eviat problemas de inserção e remoção comcomitante
+		  __disable_irq();
+		  if(dataBufferPop(&dataBuffer, &dataSnapshot)){
+			  __enable_irq();
+			  sprintf(line,
+					  "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
+					  dataSnapshot.pitch_deg, dataSnapshot.roll_deg, dataSnapshot.yaw_deg,
+					  dataSnapshot.linAx_ms2, dataSnapshot.linAy_ms2, dataSnapshot.linAz_ms2,
+					  dataSnapshot.latitude, dataSnapshot.longitude,
+					  dataSnapshot.velocity, dataSnapshot.motorRPM,
+					  dataSnapshot.fuelConsumption, dataSnapshot.throttle, dataSnapshot.gear);
 
-    	  printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
-    	      	          dataSnapshot.pitch_deg, dataSnapshot.roll_deg, dataSnapshot.yaw_deg,
-    	      	          dataSnapshot.linAx_ms2, dataSnapshot.linAy_ms2, dataSnapshot.linAz_ms2,
-    	      	          dataSnapshot.latitude, dataSnapshot.longitude,
-    	      	          dataSnapshot.velocity, dataSnapshot.motorRPM,
-    	      	          dataSnapshot.fuelConsumption, dataSnapshot.throttle, dataSnapshot.gear);
-    	  SDCyclicAddLine(&SDLogger, line);
-    	  if(SDLogger.lineCount >= SAFE_MAX_DATA_BUFFER_SIZE )
-    	              	ready2SaveFlag = 1;
+			  printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
+							  dataSnapshot.pitch_deg, dataSnapshot.roll_deg, dataSnapshot.yaw_deg,
+							  dataSnapshot.linAx_ms2, dataSnapshot.linAy_ms2, dataSnapshot.linAz_ms2,
+							  dataSnapshot.latitude, dataSnapshot.longitude,
+							  dataSnapshot.velocity, dataSnapshot.motorRPM,
+							  dataSnapshot.fuelConsumption, dataSnapshot.throttle, dataSnapshot.gear);
+			  SDCyclicAddLine(&SDLogger, line);
+			  if(SDLogger.lineCount >= SAFE_MAX_DATA_BUFFER_SIZE )
+							ready2SaveFlag = 1;
 
-      }
-      else
-    	  __enable_irq();
+		  }
+		  else
+			  __enable_irq();
 
-      	if(ready2SaveFlag){
-      		__disable_irq();
-      		SDCyclicFlush(&SDLogger, "log.csv");
-      		__enable_irq();
-      		ready2SaveFlag = 0;
-      	}
-	    HAL_Delay(50);
-//	  uint32_t now = HAL_GetTick();
-//	  float dt = (now - last) / 1000.0f;
-//	  if (dt <= 0) dt = 0.001f;
-//	  last = now;
-//
-//	  IMU_Update(dt);
+			if(ready2SaveFlag){
+				__disable_irq();
+				SDCyclicFlush(&SDLogger, "log.csv");
+				__enable_irq();
+				ready2SaveFlag = 0;
+			}
+			HAL_Delay(50);
 
-	  // Imprime orientacao + aceleracao linear
-//	  printf("Pitch=%.2f Roll=%.2f Yaw=%.2f | a_lin: X=%.2f Y=%.2f Z=%.2f (m/s2)\r\n",
-//			 pitch_deg, roll_deg, yaw_deg,
-//			 linAx_ms2, linAy_ms2, linAz_ms2);
-//
-//	  HAL_Delay( (int)(1000.0f / SAMPLE_HZ) ); // manter ~SAMPLE_HZ
-//
-//	  sprintf(sdPhraseBuffer, "%.2f, %.2f, %.2f, %.2f, %.2f, %.2f\r\n", pitch_deg, roll_deg, yaw_deg,
-//				 linAx_ms2, linAy_ms2, linAz_ms2);
-//	  strcat(sdWriteBuffer, sdPhraseBuffer);
-//	  sd_append_file("acc.txt", sdWriteBuffer);
+		/* USER CODE END WHILE */
 
-
-//	  MPU6050_Read_Gyro(&Gx, &Gy, &Gz);
-//	  MPU6050_Read_Accel(&Ax, &Ay, &Az);
-//	  printf("Ax=%.2f Ay=%.2f Az=%.2f | Gx=%.2f Gy=%.2f Gz=%.2f\r\n",Ax, Ay, Az, Gx, Gy, Gz);
-//
-//	  MPU6050_Get_Accel_Relative(Ax, Ay, Az, &relAx, &relAy, &relAz);
-//	  printf("AccX=%.3f AccY=%.3f AccZ=%.3f\r\n", relAx, relAy, relAz);
-//	  MPU6050_Get_Lin_Accel(&accLinX, &accLinY, &accLinZ );
-//	  printf("AccX=%.3f AccY=%.3f AccZ=%.3f\r\n", accLinX, accLinY, accLinZ);
-//	  printf("\n\n\n\r");
-//	  HAL_Delay(100);
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+		/* USER CODE BEGIN 3 */
+	  }
+  else
+  {
+	  printf("Idle Mode On \n\r");
+	  HAL_Delay(1000);
+	  if(SDLogger.mounted)
+		  sd_unmount();
+  }
   }
   /* USER CODE END 3 */
 }
@@ -334,50 +315,56 @@ void SystemClock_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 	if(htim->Instance==TIM6)
 	{
-		uiMsCounter+=1;
+		if(!idleMode){
+			uiMsCounter+=1;
 
-		if(!(uiMsCounter%10)){
-//			IMU_Update(0.01);
-//			MPU6050AddSample(pitch_deg, roll_deg, yaw_deg, linAx_ms2, linAy_ms2, linAz_ms2);
+			if(!(uiMsCounter%10)){
+	//			IMU_Update(0.01);
+	//			MPU6050AddSample(pitch_deg, roll_deg, yaw_deg, linAx_ms2, linAy_ms2, linAz_ms2);
+			}
+
+			if(!(uiMsCounter%100)){
+				IMU_Update(0.1);
+
+				data.pitch_deg = pitch_deg;
+				data.roll_deg  = roll_deg;
+				data.yaw_deg   = yaw_deg;
+
+				data.linAx_ms2 = linAx_ms2;
+				data.linAy_ms2 = linAy_ms2;
+				data.linAz_ms2 = linAz_ms2;
+
+				// --- Atualiza GPS ---
+				data.latitude  = GPS.dec_latitude;
+				data.longitude = GPS.dec_longitude;
+
+				// --- Atualiza OBD2 ---
+				data.velocity        = velocity;
+				data.motorRPM        = motorRPM;
+				data.fuelConsumption = fuelConsumption;
+				data.throttle        = throttle;
+				data.gear            = gear;
+
+				//ELM327SendCommand("010C");
+	//			printf("Pitch=%.2f Roll=%.2f Yaw=%.2f | a_lin: X=%.2f Y=%.2f Z=%.2f (m/s2)\r\n",
+	//			       pitch_deg, roll_deg, yaw_deg,
+	//			       linAx_ms2, linAy_ms2, linAz_ms2);
+	//			printf("Lat= %.2f Lon= %.2f\r\n", GPS.dec_latitude, GPS.dec_longitude);
+	//			printf("Velocidade: %.1f km/h | RPM: %.0f | Consumo: %.2f L/h | Acelerador: %d%% | Marcha: %d\r\n",
+	//			       velocity, motorRPM, fuelConsumption, throttle, gear);
+
+				dataBufferPush(&dataBuffer, &data);
+
+			}
+			//if(!(uiMsCounter%1000)){
+
+			//}
 		}
-
-		if(!(uiMsCounter%100)){
-			IMU_Update(0.1);
-
-	        data.pitch_deg = pitch_deg;
-	        data.roll_deg  = roll_deg;
-	        data.yaw_deg   = yaw_deg;
-
-	        data.linAx_ms2 = linAx_ms2;
-	        data.linAy_ms2 = linAy_ms2;
-	        data.linAz_ms2 = linAz_ms2;
-
-	        // --- Atualiza GPS ---
-	        data.latitude  = GPS.dec_latitude;
-	        data.longitude = GPS.dec_longitude;
-
-	        // --- Atualiza OBD2 ---
-	        data.velocity        = velocity;
-	        data.motorRPM        = motorRPM;
-	        data.fuelConsumption = fuelConsumption;
-	        data.throttle        = throttle;
-	        data.gear            = gear;
-
-			//ELM327SendCommand("010C");
-//			printf("Pitch=%.2f Roll=%.2f Yaw=%.2f | a_lin: X=%.2f Y=%.2f Z=%.2f (m/s2)\r\n",
-//			       pitch_deg, roll_deg, yaw_deg,
-//			       linAx_ms2, linAy_ms2, linAz_ms2);
-//			printf("Lat= %.2f Lon= %.2f\r\n", GPS.dec_latitude, GPS.dec_longitude);
-//			printf("Velocidade: %.1f km/h | RPM: %.0f | Consumo: %.2f L/h | Acelerador: %d%% | Marcha: %d\r\n",
-//			       velocity, motorRPM, fuelConsumption, throttle, gear);
-
-            dataBufferPush(&dataBuffer, &data);
-
-
+		else
+		{
 
 		}
-		//if(!(uiMsCounter%1000)){
-
+	}
 //            sprintf(sdLineBuffer,
 //                    "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
 //                    pitch_deg, roll_deg, yaw_deg,
@@ -397,30 +384,37 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 
 
 
-		//}
 
-	}
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  if (huart == &huart3) {
-    GPS_UART_CallBack();
-  }
-  if(huart->Instance == USART1){
-	//ELM327UARTCallback();
-	//HAL_UART_Receive_IT(&huart1, &uart_rx_byte, 1);
-	//HAL_UART_Transmit_IT(&hlpuart1, &uart_rx_byte, 1);
-  }
+	if(!idleMode){
+	  if (huart == &huart3) {
+		GPS_UART_CallBack();
+	  }
+	  if(huart->Instance == USART1){
+		//ELM327UARTCallback();
+		//HAL_UART_Receive_IT(&huart1, &uart_rx_byte, 1);
+		//HAL_UART_Transmit_IT(&hlpuart1, &uart_rx_byte, 1);
+	  }
+	}
 
   if (huart == &hlpuart1)
   {
-      // Para recepção do PC, apenas retransmite imediatamente para USART1
-      //HAL_UART_Transmit(&huart1, &rxLPUART, 1, HAL_MAX_DELAY);
+	  // Para recepção do PC, apenas retransmite imediatamente para USART1
+	  //HAL_UART_Transmit(&huart1, &rxLPUART, 1, HAL_MAX_DELAY);
 
-      // Reinicia a recepção
-      HAL_UART_Receive_IT(&hlpuart1, &rxLPUART, 1);
+	  // Reinicia a recepção
+	  HAL_UART_Receive_IT(&hlpuart1, &rxLPUART, 1);
   }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if (GPIO_Pin == B1_Pin){
+		idleMode = 1;
+	}
+
 }
 /* USER CODE END 4 */
 

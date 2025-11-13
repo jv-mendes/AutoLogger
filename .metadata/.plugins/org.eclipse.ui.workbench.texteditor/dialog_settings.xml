@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
-	<item key="replaceBarOpen" value="false"/>
+	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
-		<item value="SD"/>
 		<item value="GPS"/>
+		<item value="SENSOR"/>
+		<item value="SensorBuffer_t"/>
+		<item value="g_SensorData"/>
+		<item value="SD"/>
 		<item value="extern"/>
 		<item value="gps"/>
 		<item value="ELM327"/>
@@ -15,9 +18,11 @@
 		<item value="fat"/>
 		<item value="SD_SPI_HANDLE"/>
 		<item value="CS_HIGH"/>
-		<item value="SPI2"/>
-		<item value="spi1"/>
-		<item value="hlpuart1"/>
+	</list>
+	<list key="replacehistory">
+		<item value="DATA"/>
+		<item value="DataBuffer_t"/>
+		<item value="data"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="selection" value="init"/>
