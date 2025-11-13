@@ -2,47 +2,63 @@
 #include "sd_functions.h"
 #include "sd_benchmark.h"
 #include "app_fatfs.h"
+#include <string.h>
+#include <stdio.h>
 
-void SDCyclic_Init(SDCyclic_t *sd, const char *filename)
+extern FATFS USERFatFs;
+extern char USERPath[4];
+
+void SDCyclicInit(SDCyclic_t *sd)
 {
     sd->head = 0;
     sd->tail = 0;
+    sd->lineCount = 0;
     sd->mounted = 0;
-
-    if (f_mount(&USERFatFs, USERPath, 1) == FR_OK) {
-        if (f_open(&sd->file, filename, FA_WRITE | FA_OPEN_APPEND) == FR_OK) {
-            sd->mounted = 1;
-            printf("[SD] Log file '%s' opened.\r\n", filename);
-        } else {
-            printf("[SD] Error opening file.\r\n");
-        }
-    } else {
-        printf("[SD] Mount failed.\r\n");
-    }
 }
 
-void SDCyclic_AddLine(SDCyclic_t *sd, const char *line)
+void SDCyclicAddLine(SDCyclic_t *sd, const char *line)
 {
-    if (!sd->mounted) return;
-
+	sd->lineCount += 1;
     uint16_t len = strlen(line);
     for (uint16_t i = 0; i < len; i++) {
         sd->buffer[sd->head] = line[i];
         sd->head = (sd->head + 1) % SDCYCLIC_BUFFER_SIZE;
 
-        // sobrescreve se cheio
-        if (sd->head == sd->tail)
+        // sobrescreve se cheioS
+        if (sd->head == sd->tail){
             sd->tail = (sd->tail + 1) % SDCYCLIC_BUFFER_SIZE;
+            sd->lineCount -= 1;
+        }
     }
 }
 
-void SDCyclic_Flush(SDCyclic_t *sd)
+bool SDCyclicFlush(SDCyclic_t *sd, const char *filename)
 {
-    if (!sd->mounted || sd->head == sd->tail) return;
+    if (sd->head == sd->tail)
+        return false; // nada a gravar
 
-    char temp[SDCYCLIC_TEMP_SIZE];
+    FRESULT res;
+    FIL file;
     UINT bw;
+    char temp[SDCYCLIC_TEMP_SIZE];
 
+    // Monta o SD
+    //res = f_mount(&USERFatFs, USERPath, 1);
+    res = sd_mount();
+    if (res != FR_OK) {
+        printf("[SD] Mount failed (%d)\r\n", res);
+        return false;
+    }
+
+    // Abre (ou cria) o arquivo
+    res = f_open(&file, filename, FA_WRITE | FA_OPEN_APPEND);
+    if (res != FR_OK) {
+        printf("[SD] File open failed (%d)\r\n", res);
+        f_mount(NULL, "", 0);
+        return false;
+    }
+
+    // Escreve o buffer circular
     while (sd->tail != sd->head) {
         uint16_t count = 0;
 
@@ -51,19 +67,14 @@ void SDCyclic_Flush(SDCyclic_t *sd)
             sd->tail = (sd->tail + 1) % SDCYCLIC_BUFFER_SIZE;
         }
 
-        f_write(&sd->file, temp, count, &bw);
+        f_write(&file, temp, count, &bw);
     }
 
-    f_sync(&sd->file);
-}
-
-void SDCyclic_Deinit(SDCyclic_t *sd)
-{
-    if (!sd->mounted) return;
-
-    SDCyclic_Flush(sd);
-    f_close(&sd->file);
+    f_sync(&file);
+    f_close(&file);
     f_mount(NULL, "", 0);
-    sd->mounted = 0;
-    printf("[SD] Unmounted.\r\n");
+    printf("[SD] Flushed and unmounted.\r\n");
+    sd->lineCount = 0;
+
+    return true;
 }

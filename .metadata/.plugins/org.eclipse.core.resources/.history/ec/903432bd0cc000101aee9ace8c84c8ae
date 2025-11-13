@@ -1,0 +1,28 @@
+/*
+ * dataBuffer.h
+ *
+ *  Created on: Nov 12, 2025
+ *      Author: jvmen
+ */
+
+#ifndef INC_DATABUFFER_H_
+#define INC_DATABUFFER_H_
+
+#include "main.h"
+#include <stdbool.h>
+
+#define DATA_BUFFER_SIZE 64  // até 32 amostras (ajuste conforme taxa)
+
+typedef struct {
+    SensorData_t buffer[DATA_BUFFER_SIZE];
+    uint8_t head;
+    uint8_t tail;
+    uint8_t count;
+} DataBuffer_t;
+
+void dataBufferInit(DataBuffer_t *buf);
+int dataBufferPush(DataBuffer_t *buf, const SensorData_t *data);
+int dataBufferPop(DataBuffer_t *buf, SensorData_t *data);
+
+
+#endif /* INC_DATABUFFER_H_ */

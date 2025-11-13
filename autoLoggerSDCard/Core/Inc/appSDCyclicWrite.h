@@ -16,27 +16,32 @@ extern "C" {
 #include "main.h"
 #include "stdio.h"
 #include "string.h"
+#include "stdbool.h"
 
-#define SDCYCLIC_BUFFER_SIZE   8192  // 8 KB buffer
-#define SDCYCLIC_TEMP_SIZE      256  // chunk para escrita
+#define SDCYCLIC_BUFFER_SIZE   16384  // 8 KB buffer em RAM
+#define SDCYCLIC_TEMP_SIZE      256  // chunk temporário de escrita
 
 typedef struct {
-    char buffer[SDCYCLIC_BUFFER_SIZE];
-    volatile uint16_t head;
-    volatile uint16_t tail;
-    FIL file;
-    uint8_t mounted;
+    char buffer[SDCYCLIC_BUFFER_SIZE];  // buffer circular
+    volatile uint16_t head;             // índice de escrita
+    volatile uint16_t tail;             // índice de leitura
+    volatile uint16_t lineCount;        // número de linhas registradas
+    uint8_t mounted;                    // flag interno (não usado no novo modelo)
 } SDCyclic_t;
 
 // === Funções principais ===
-void SDCyclic_Init(SDCyclic_t *sd, const char *filename);
-void SDCyclic_AddLine(SDCyclic_t *sd, const char *line);
-void SDCyclic_Flush(SDCyclic_t *sd);
-void SDCyclic_Deinit(SDCyclic_t *sd);
+
+// Inicializa a estrutura (zera índices e flags)
+void SDCyclicInit(SDCyclic_t *sd);
+
+// Adiciona uma linha ao buffer (sem montar o SD)
+void SDCyclicAddLine(SDCyclic_t *sd, const char *line);
+
+// Monta o SD, grava o conteúdo do buffer e desmonta (automático)
+bool SDCyclicFlush(SDCyclic_t *sd, const char *filename);
 
 #ifdef __cplusplus
 }
 #endif
-
 
 #endif /* INC_APPSDCYCLICWRITE_H_ */

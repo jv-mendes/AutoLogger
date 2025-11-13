@@ -1,0 +1,42 @@
+/*
+ * AppSDCyclicWrite.h
+ *
+ *  Created on: Nov 10, 2025
+ *      Author: jvmen
+ */
+
+#ifndef INC_APPSDCYCLICWRITE_H_
+#define INC_APPSDCYCLICWRITE_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "app_fatfs.h"
+#include "main.h"
+#include "stdio.h"
+#include "string.h"
+
+#define SDCYCLIC_BUFFER_SIZE   8192  // 8 KB buffer
+#define SDCYCLIC_TEMP_SIZE      256  // chunk para escrita
+
+typedef struct {
+    char buffer[SDCYCLIC_BUFFER_SIZE];
+    volatile uint16_t head;
+    volatile uint16_t tail;
+    FIL file;
+    uint8_t mounted;
+} SDCyclic_t;
+
+// === Funções principais ===
+void SDCyclic_Init(SDCyclic_t *sd, const char *filename);
+void SDCyclic_AddLine(SDCyclic_t *sd, const char *line);
+void SDCyclic_Flush(SDCyclic_t *sd);
+void SDCyclic_Deinit(SDCyclic_t *sd);
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif /* INC_APPSDCYCLICWRITE_H_ */

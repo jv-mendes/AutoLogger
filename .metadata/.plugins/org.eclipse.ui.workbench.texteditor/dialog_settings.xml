@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="SD"/>
 		<item value="GPS"/>
 		<item value="extern"/>
 		<item value="gps"/>
@@ -17,7 +18,6 @@
 		<item value="SPI2"/>
 		<item value="spi1"/>
 		<item value="hlpuart1"/>
-		<item value="0111"/>
 	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="selection" value="init"/>

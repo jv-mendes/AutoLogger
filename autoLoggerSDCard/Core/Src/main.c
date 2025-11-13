@@ -29,6 +29,7 @@
 /* USER CODE BEGIN Includes */
 #include "sd_functions.h"
 #include "sd_benchmark.h"
+#include "dataBuffer.h"
 
 #include "string.h"
 #include "stdio.h"
@@ -55,6 +56,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+
 //UART_HandleTypeDef hlpuart1;
 
 /* USER CODE END PD */
@@ -76,6 +78,7 @@ char sdPhraseBuffer[128];
 
 SDCyclic_t SDLogger;
 char sdLineBuffer[128];
+char ready2SaveFlag =0;
 
 //Accelerometer
 float Ax, Ay, Az;
@@ -92,6 +95,16 @@ GPS_t GPS;
 uint8_t uart_rx_byte;
 uint8_t uart_rx_buffer[UART_RX_BUFFER_SIZE];
 uint8_t rxLPUART;
+
+float velocity = 0;
+float motorRPM = 0;
+float fuelConsumption = 0;
+int throttle = 0 ;
+int gear = 1;
+
+SensorData_t data;
+DataBuffer_t dataBuffer;
+
 
 #define MPU6050_ADDR 0xD0   // endereço I2C (AD0 = GND → 0x68)
 #define MPU6050_ACCEL_XOUT_H 0x3B
@@ -156,15 +169,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
   GPS_Init();
   //logger
-  SDCyclic_Init(&SDLogger, "log.csv");
+  SDCyclicInit(&SDLogger);
 
 
   //test MiniSD card
-  //sd_mount();
-  //sd_append_file("File1.txt", "NEW DATA FROM AUTOLOGGER\n\r");
-  //sd_read_file("File1.txt", bufr, 80, &br);
-  //printf("DATA from File:::: %s\n\n",bufr);
-  //sd_unmount();
+   //sd_mount();
+//  sd_append_file("File10.txt", "NEW DATA FROM AUTOLOGGER\n\r");
+//  sd_read_file("File10.txt", bufr, 80, &br);
+//  printf("DATA from File:::: %s\n\n",bufr);
+   //sd_unmount();
   //sd_benchmark();
 
 
@@ -196,10 +209,44 @@ int main(void)
   HAL_NVIC_EnableIRQ(USART3_IRQn);
   HAL_NVIC_EnableIRQ(USART1_IRQn);
   HAL_NVIC_EnableIRQ(LPUART1_IRQn);
+
+  static SensorData_t dataSnapshot;
+  static char line[160];
   while (1)
   {
-	    SDCyclic_Flush(&SDLogger);
-	    HAL_Delay(1000);
+	  //copia o data para eviat problemas de inserção e remoção comcomitante
+      __disable_irq();
+      if(dataBufferPop(&dataBuffer, &dataSnapshot)){
+    	  __enable_irq();
+    	  sprintf(line,
+    	          "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
+    	          dataSnapshot.pitch_deg, dataSnapshot.roll_deg, dataSnapshot.yaw_deg,
+    	          dataSnapshot.linAx_ms2, dataSnapshot.linAy_ms2, dataSnapshot.linAz_ms2,
+    	          dataSnapshot.latitude, dataSnapshot.longitude,
+    	          dataSnapshot.velocity, dataSnapshot.motorRPM,
+    	          dataSnapshot.fuelConsumption, dataSnapshot.throttle, dataSnapshot.gear);
+
+    	  printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
+    	      	          dataSnapshot.pitch_deg, dataSnapshot.roll_deg, dataSnapshot.yaw_deg,
+    	      	          dataSnapshot.linAx_ms2, dataSnapshot.linAy_ms2, dataSnapshot.linAz_ms2,
+    	      	          dataSnapshot.latitude, dataSnapshot.longitude,
+    	      	          dataSnapshot.velocity, dataSnapshot.motorRPM,
+    	      	          dataSnapshot.fuelConsumption, dataSnapshot.throttle, dataSnapshot.gear);
+    	  SDCyclicAddLine(&SDLogger, line);
+    	  if(SDLogger.lineCount >= SAFE_MAX_DATA_BUFFER_SIZE )
+    	              	ready2SaveFlag = 1;
+
+      }
+      else
+    	  __enable_irq();
+
+      	if(ready2SaveFlag){
+      		__disable_irq();
+      		SDCyclicFlush(&SDLogger, "log.csv");
+      		__enable_irq();
+      		ready2SaveFlag = 0;
+      	}
+	    HAL_Delay(50);
 //	  uint32_t now = HAL_GetTick();
 //	  float dt = (now - last) / 1000.0f;
 //	  if (dt <= 0) dt = 0.001f;
@@ -290,29 +337,59 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 		uiMsCounter+=1;
 
 		if(!(uiMsCounter%10)){
-			//IMU_Update(0.01);
+//			IMU_Update(0.01);
 //			MPU6050AddSample(pitch_deg, roll_deg, yaw_deg, linAx_ms2, linAy_ms2, linAz_ms2);
 		}
 
-		if(!(uiMsCounter%500)){
+		if(!(uiMsCounter%100)){
+			IMU_Update(0.1);
+
+	        data.pitch_deg = pitch_deg;
+	        data.roll_deg  = roll_deg;
+	        data.yaw_deg   = yaw_deg;
+
+	        data.linAx_ms2 = linAx_ms2;
+	        data.linAy_ms2 = linAy_ms2;
+	        data.linAz_ms2 = linAz_ms2;
+
+	        // --- Atualiza GPS ---
+	        data.latitude  = GPS.dec_latitude;
+	        data.longitude = GPS.dec_longitude;
+
+	        // --- Atualiza OBD2 ---
+	        data.velocity        = velocity;
+	        data.motorRPM        = motorRPM;
+	        data.fuelConsumption = fuelConsumption;
+	        data.throttle        = throttle;
+	        data.gear            = gear;
+
 			//ELM327SendCommand("010C");
-
-		}
-		if(!(uiMsCounter%1000)){
-			IMU_Update(1);
-            sprintf(sdLineBuffer,
-                    "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f\r\n",
-                    pitch_deg, roll_deg, yaw_deg,
-                    linAx_ms2, linAy_ms2, linAz_ms2,
-                    GPS.dec_latitude, GPS.dec_longitude);
-
-            SDCyclic_AddLine(&SDLogger, sdLineBuffer);
-
-//            printf("%s", sdLineBuffer);
 //			printf("Pitch=%.2f Roll=%.2f Yaw=%.2f | a_lin: X=%.2f Y=%.2f Z=%.2f (m/s2)\r\n",
 //			       pitch_deg, roll_deg, yaw_deg,
 //			       linAx_ms2, linAy_ms2, linAz_ms2);
 //			printf("Lat= %.2f Lon= %.2f\r\n", GPS.dec_latitude, GPS.dec_longitude);
+//			printf("Velocidade: %.1f km/h | RPM: %.0f | Consumo: %.2f L/h | Acelerador: %d%% | Marcha: %d\r\n",
+//			       velocity, motorRPM, fuelConsumption, throttle, gear);
+
+            dataBufferPush(&dataBuffer, &data);
+
+
+
+		}
+		//if(!(uiMsCounter%1000)){
+
+//            sprintf(sdLineBuffer,
+//                    "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%.6f,%.1f,%.0f,%.2f,%d,%d\r\n",
+//                    pitch_deg, roll_deg, yaw_deg,
+//                    linAx_ms2, linAy_ms2, linAz_ms2,
+//                    GPS.dec_latitude, GPS.dec_longitude,
+//					  velocity, motorRPM, fuelConsumption, throttle, gear);
+
+
+//
+//            SDCyclic_AddLine(&SDLogger, sdLineBuffer);
+
+//            printf("%s", sdLineBuffer);
 //			MPU6050ComputeMean(&mean_pitch, &mean_roll, &mean_yaw, &mean_ax, &mean_ay, &mean_az);
 //			printf("MÉDIA (último 1s): "
 //			           "Pitch=%.2f Roll=%.2f Yaw=%.2f | a_lin: X=%.2f Y=%.2f Z=%.2f (m/s²)\r\n",
@@ -320,7 +397,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 
 
 
-		}
+		//}
 
 	}
 }
