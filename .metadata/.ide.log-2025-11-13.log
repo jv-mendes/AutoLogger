@@ -1,0 +1,82 @@
+2025-11-14 00:07:54,547 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-14 00:08:13,981 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x203,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-14 00:08:18,019 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-14 00:08:29,116 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 723210608 Bytes (859832320)
+2025-11-14 00:08:29,245 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 745924376 Bytes (859832320)
+2025-11-14 00:08:30,078 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 790756928 Bytes (859832320)
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM6_7G4
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: LPUART
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-11-14 00:08:30,593 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2025-11-14 00:08:30,594 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-11-14 00:08:30,594 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FATFS
+2025-11-14 00:08:30,595 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-11-14 00:08:30,812 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\MXTmpFiles\license.tmp_save
+2025-11-14 00:08:31,545 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\MXTmpFiles\license.tmp
+2025-11-14 00:08:31,727 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\gpio.c_save
+2025-11-14 00:08:31,938 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\gpio.c
+2025-11-14 00:08:31,946 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\gpio.h_save
+2025-11-14 00:08:32,041 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\gpio.h
+2025-11-14 00:08:32,727 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-11-14 00:08:32,731 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-11-14 00:08:32,740 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\Target\ffconf.h_save
+2025-11-14 00:08:32,904 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\Target\ffconf.h
+2025-11-14 00:08:32,912 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\Target\user_diskio.c_save
+2025-11-14 00:08:33,003 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\Target\user_diskio.c
+2025-11-14 00:08:33,011 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\Target\user_diskio.h_save
+2025-11-14 00:08:33,091 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\Target\user_diskio.h
+2025-11-14 00:08:33,099 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\App\app_fatfs.c_save
+2025-11-14 00:08:33,192 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\App\app_fatfs.c
+2025-11-14 00:08:33,199 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\App\app_fatfs.h_save
+2025-11-14 00:08:33,285 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\FATFS\App\app_fatfs.h
+2025-11-14 00:08:33,299 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\i2c.c_save
+2025-11-14 00:08:33,489 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\i2c.c
+2025-11-14 00:08:33,496 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\i2c.h_save
+2025-11-14 00:08:33,586 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\i2c.h
+2025-11-14 00:08:33,599 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\usart.c_save
+2025-11-14 00:08:33,795 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\usart.c
+2025-11-14 00:08:33,809 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\usart.h_save
+2025-11-14 00:08:33,900 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\usart.h
+2025-11-14 00:08:33,912 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\spi.c_save
+2025-11-14 00:08:34,056 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\spi.c
+2025-11-14 00:08:34,061 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\spi.h_save
+2025-11-14 00:08:34,134 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\spi.h
+2025-11-14 00:08:34,155 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\tim.c_save
+2025-11-14 00:08:34,371 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\tim.c
+2025-11-14 00:08:34,391 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\tim.h_save
+2025-11-14 00:08:34,488 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\tim.h
+2025-11-14 00:08:34,518 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\stm32g4xx_it.c_save
+2025-11-14 00:08:34,721 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\stm32g4xx_it.c
+2025-11-14 00:08:34,730 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\stm32g4xx_it.h_save
+2025-11-14 00:08:34,803 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\stm32g4xx_it.h
+2025-11-14 00:08:34,848 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\stm32g4xx_hal_msp.c_save
+2025-11-14 00:08:34,974 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\stm32g4xx_hal_msp.c
+2025-11-14 00:08:34,980 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\MXTmpFiles\system.tmp_save
+2025-11-14 00:08:35,041 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\MXTmpFiles\system.tmp
+2025-11-14 00:08:35,071 [INFO] CodeEngine:321 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\stm32g4xx_hal_conf.h_save
+2025-11-14 00:08:35,215 [INFO] CodeEngine:345 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\stm32g4xx_hal_conf.h
+2025-11-14 00:08:35,253 [WARN] IPConfigManager:3238 - Warning: the RefConfig RCC_CommonPeriphClockConfig is not available in your config.xml file
+2025-11-14 00:08:35,262 [INFO] ApiDbMcu:532 - Load IP Config File for I2C1
+2025-11-14 00:08:35,270 [INFO] ApiDbMcu:532 - Load IP Config File for LPUART1
+2025-11-14 00:08:35,278 [INFO] ApiDbMcu:532 - Load IP Config File for UART4
+2025-11-14 00:08:35,286 [INFO] ApiDbMcu:532 - Load IP Config File for USART1
+2025-11-14 00:08:35,294 [INFO] ApiDbMcu:532 - Load IP Config File for USART3
+2025-11-14 00:08:35,297 [INFO] ApiDbMcu:532 - Load IP Config File for SPI2
+2025-11-14 00:08:35,308 [INFO] ApiDbMcu:532 - Load IP Config File for TIM6
+2025-11-14 00:08:35,310 [INFO] ApiDbMcu:532 - Load IP Config File for RCC
+2025-11-14 00:08:35,323 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\main.h_save
+2025-11-14 00:08:35,468 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Inc\main.h
+2025-11-14 00:08:35,482 [INFO] CodeEngine:265 - oldGeneratedFile, C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\main.c_save
+2025-11-14 00:08:35,626 [INFO] CodeEngine:289 - Generated code: C:\Users\jvmen\Documents\TG\code\AutoLogger\autoLoggerSDCard\Core\Src\main.c
+2025-11-14 00:08:36,085 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 250mS.
+2025-11-14 00:08:36,098 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-11-14 00:08:36,166 [INFO] ConfigFileManager:1595 - The Die is : DIE469
+2025-11-14 00:08:36,183 [INFO] ApiDbMcu:532 - Load IP Config File for FREERTOS
+2025-11-14 00:08:36,198 [INFO] ApiDbMcu:532 - Load IP Config File for USBPD
+2025-11-14 00:08:36,217 [INFO] ApiDbMcu:532 - Load IP Config File for USB_DEVICE

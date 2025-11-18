@@ -3,6 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="ELM327"/>
+		<item value="sd_mount"/>
+		<item value="CsvRecord"/>
 		<item value="GPS"/>
 		<item value="SENSOR"/>
 		<item value="SensorBuffer_t"/>
@@ -10,14 +13,11 @@
 		<item value="SD"/>
 		<item value="extern"/>
 		<item value="gps"/>
-		<item value="ELM327"/>
 		<item value="_write"/>
 		<item value="obd2"/>
 		<item value="mag"/>
 		<item value="CS"/>
 		<item value="fat"/>
-		<item value="SD_SPI_HANDLE"/>
-		<item value="CS_HIGH"/>
 	</list>
 	<list key="replacehistory">
 		<item value="DATA"/>

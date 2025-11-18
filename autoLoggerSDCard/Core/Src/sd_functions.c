@@ -365,3 +365,41 @@ void sd_list_files(void) {
 	sd_list_directory_recursive(sd_path, 0);
 	printf("\r\n\r\n");
 }
+
+FRESULT sd_send_file_over_uart(const char *filename, UART_HandleTypeDef *huart)
+{
+    FIL file;
+    FRESULT res;
+    UINT br;
+    char buffer[256];   // bloco de leitura
+
+    // Abre arquivo para leitura
+    res = f_open(&file, filename, FA_READ);
+    if (res != FR_OK)
+    {
+        char msg[64];
+        sprintf(msg, "[SD] Failed to open %s (%d)\r\n", filename, res);
+        HAL_UART_Transmit(huart, (uint8_t*)msg, strlen(msg), 100);
+        return res;
+    }
+
+    // Lê até EOF
+    while (1)
+    {
+        res = f_read(&file, buffer, sizeof(buffer)-1, &br);
+        if (res != FR_OK)
+        {
+            HAL_UART_Transmit(huart, (uint8_t*)"Read error\r\n", 12, 100);
+            break;
+        }
+
+        if (br == 0) break;     // EOF
+
+        buffer[br] = '\0';      // garante string válida
+
+        HAL_UART_Transmit(huart, (uint8_t*)buffer, br, 100);
+    }
+
+    f_close(&file);
+    return FR_OK;
+}

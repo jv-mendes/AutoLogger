@@ -13,3 +13,4 @@
 ../Core/Src/sd_functions.c:328:9:sd_create_directory	2
 ../Core/Src/sd_functions.c:334:6:sd_list_directory_recursive	7
 ../Core/Src/sd_functions.c:363:6:sd_list_files	1
+../Core/Src/sd_functions.c:369:9:sd_send_file_over_uart	4

@@ -38,6 +38,7 @@ extern "C" {
 /* USER CODE BEGIN ET */
 
 typedef struct {
+	float timestamp;
     // IMU
     float pitch_deg;
     float roll_deg;
@@ -56,6 +57,9 @@ typedef struct {
     float fuelConsumption; // L/h
     uint8_t throttle;      // %
     uint8_t gear;    // marcha
+    //coef
+    float CCR; //fuelConsumption/(motorRPM * velocity)
+    float dangerousDriving;
 } SensorData_t;
 /* USER CODE END ET */
 

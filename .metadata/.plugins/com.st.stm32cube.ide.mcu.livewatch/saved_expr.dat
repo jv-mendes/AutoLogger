@@ -5,3 +5,6 @@ bufferOverflow
 uiMsCounter
 SDLogger.lineCount
 idleMode
+dataBuffer.count
+rxBt
+fileInfoSend

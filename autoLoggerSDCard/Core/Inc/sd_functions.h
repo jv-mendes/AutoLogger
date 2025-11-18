@@ -81,4 +81,6 @@ void SDCyclicAddLine(SDCyclic_t *sd, const char *line);
 // Monta o SD, grava o conteúdo do buffer e desmonta (automático)
 bool SDCyclicFlush(SDCyclic_t *sd, const char *filename);
 
+FRESULT sd_send_file_over_uart(const char *filename, UART_HandleTypeDef *huart);
+
 #endif // __SD_FUNCTIONS_H__
